@@ -1,3 +1,11 @@
+<div id="interior_wrapper">
+    <div id="interior_header_absolute">
+        <p id="int_header">New Category</p>
+    </div>
+    
+    <div id="cb_header_bg"><p></p></div>
+
+
 <h1>New category</h1>
 
 <% form_for(@category) do |f| %>
@@ -13,3 +21,6 @@
 <% end %>
 
 <%= link_to 'Back', categories_path %>
+
+
+<div id="interior_footer"><p>&copy; EMERALD CITY GUITARS | <%= link_to 'Privacy Policy', privacy_path %> | Site by <%= link_to "Ravenna Interactive", "http://ravennainteractive.com" %></p></div>

@@ -1,4 +1,10 @@
-<div id="visitor_container">
+
+<div id="interior_wrapper">
+    <div id="interior_header_absolute">
+        <p id="int_header">Visitors</p>
+    </div>
+    
+    <div id="cb_header_bg"><p></p></div>
 
 <% @visitors.each do |visitor| %>
 <div id="visitor">
@@ -18,3 +24,5 @@
         <%= link_to 'New visitor', new_visitor_path %>
     </p>
 </div>
+
+<div id="interior_footer"><p>&copy; EMERALD CITY GUITARS | <%= link_to 'Privacy Policy', privacy_path %> | Site by <%= link_to "Ravenna Interactive", "http://ravennainteractive.com" %></p></div>

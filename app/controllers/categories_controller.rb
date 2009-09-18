@@ -16,7 +16,7 @@ class CategoriesController < ApplicationController
   def show
     @category = Category.find(params[:id])
     @brands = @category.brands
-    @categories = Category.all
+    
 
     respond_to do |format|
       format.html # show.html.erb
