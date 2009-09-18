@@ -1,0 +1,10 @@
+log/*
+log/*.log
+tmp/**/*
+.DS_store
+**/.DS_Store
+tmp/*
+db/*.sqlite3
+config/database.yml
+
+public/system/*

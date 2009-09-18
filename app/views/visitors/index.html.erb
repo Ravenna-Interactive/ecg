@@ -1,0 +1,20 @@
+<div id="visitor_container">
+
+<% @visitors.each do |visitor| %>
+<div id="visitor">
+    <p>
+       <%= image_tag visitor.photo.url(:visitor)%><br>
+        <%=h visitor.caption %>
+    </p>
+    
+    <p><%= link_to 'Show', visitor %> | 
+       <%= link_to 'Edit', edit_visitor_path(visitor) %> | 
+       <%= link_to 'Destroy', visitor, :confirm => 'Are you sure?', :method => :delete %>
+    </p>
+</div>
+<% end %>
+
+    <p id="clear">
+        <%= link_to 'New visitor', new_visitor_path %>
+    </p>
+</div>

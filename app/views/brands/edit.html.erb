@@ -1,0 +1,34 @@
+<div id="interior_wrapper">
+
+    <div id="interior_header_absolute">
+        <h3 id="int_header">Editing A Brand</h3>
+    </div>
+    <div id="cb_header_bg"></div>
+
+    <div id="interior_form">
+
+<% form_for @brand, :html => {:multipart => true } do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+  
+  <p> <%= f.label "Current Image:"%>
+      <%= image_tag(@brand.photo.url(:thumb))%>
+      </p>
+  
+  <p><%= f.label :photo %> <%= f.file_field :photo %>
+      </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @brand %> |
+<%= link_to 'Back to Brands', brands_path %>
+    </div>
+
+</div>
+<div id="interior_footer"><p>&copy; EMERALD CITY GUITARS | <%= link_to 'Privacy Policy', privacy_path %> | Site by <%= link_to "Ravenna Interactive", "http://ravennainteractive.com" %></p></div>

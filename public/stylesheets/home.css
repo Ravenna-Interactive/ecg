@@ -1,0 +1,241 @@
+html, body, div, h1, h2, h3, h4, h5, h6, ul, ol, dl, li, dt, dd, p, blockquote,
+pre, form, fieldset, table, th, td { margin: 0; padding: 0; }
+
+body{
+	background-color:#fef0c2;
+	font-family:Arial, Verdana, Helvetica, sans-serif;
+}
+img{
+	border:none;
+}
+
+a {color:#333; text-decoration:none;}
+a:hover {color:#999; text-decoration:underline;}
+#header{width:100%;}
+
+#clear{
+	clear:both;
+}
+
+#top_wood{
+	width:100%;
+	background-image:url(/images/top_wood_bg.png);
+	background-repeat:repeat-x;
+	height:50px;
+}
+#top_wood_interior{
+	margin-right:auto;
+	margin-left:auto;
+	width:960px;
+	height:50px;
+	position:relative;
+}
+#logo{
+	position:absolute;
+	top:16px;
+	left:-7px;
+}
+#phone_seattle{
+	padding-left:260px;
+	padding-top:12px;
+}
+#top_links{
+	float:right;
+	background-image:url(/images/top_links_bg.png);
+	background-repeat:no-repeat;
+	height:32px;
+	width:378px;
+	text-align:center;
+	margin-right:5px;
+}
+#links_nav{
+	list-style-type:none;
+	margin-top:4px;
+}
+#links_nav li{
+	display:inline;
+	padding:0px 1px 0px 1px;
+	color:#fff;
+	
+}
+#links_nav li a{
+	font-size:12px;
+	font-weight:bold;
+	color:#fff;
+}
+#links_nav li#top_links_right{
+	border-right:none;
+}
+
+
+/* Top Blue Styles */
+#top_blue{
+	clear:both;
+	width:100%;
+	height:26px;
+	background-image:url(/images/top_blue_bg.png);
+	background-repeat:repeat-x;
+}
+#top_blue_interior{
+	margin-right:auto;
+	margin-left:auto;
+	padding-top:3px;
+	width:960px;
+	height:26px;
+	
+}
+#main_nav{
+	list-style-type:none;
+	display:inline;
+	padding-left:265px;
+}
+#main_nav li{
+	display:inline;
+	color:#fff;
+}
+#main_nav li a{
+	font-size:13px;
+	color:#fff;
+	text-decoration:none;
+	padding:5px 8px 6px 8px;
+}
+#main_nav li a:hover{
+	background-color:#dcc959;
+	text-decoration:none;
+}
+/*  Main Image Styles */
+#main_image_container{
+	background-image:url(/images/main_image_bg.png);
+	background-repeat: repeat-x;
+	width:100%;
+	height:325px;
+}
+#main_image{
+	margin-left:auto;
+	margin-right:auto;
+	width:968px;
+	height:325px;
+}
+
+
+/*  Middle Blue Styles */
+#middle_blue{
+	clear:both;
+	width:968px;
+	height:24px;
+	padding-top:4px;
+	margin-right:auto;
+	margin-left:auto;
+	background-image:url(/images/middle_blue_bg.png);
+	background-repeat:no-repeat;
+}
+#inventory_nav_title{
+	padding:8px 0 0 60px;
+	font-size:14px;
+	font-style:italic;
+	display:inline;
+}
+
+#inventory_nav{
+	list-style:none;
+	display:inline;
+	padding-left:50px;
+}
+
+#inventory_nav li{
+	display:inline;
+	padding:0 3px 0 3px;
+	color:#fff;
+}
+#inventory_nav li a{
+	font-size:13px;
+	color:#fff;
+	text-decoration:none;
+}
+#inventory_nav li a:hover{
+	text-decoration:underline;
+}
+
+/* Home Guts Styles */
+#home_guts{
+	width:908px;
+	height:311px;
+	padding:22px 30px 0px 30px;
+	margin-right:auto;
+	margin-left:auto;
+	background-image:url(/images/home_bottom_bg.png);
+	background-repeat:no-repeat;
+	
+}
+#recent_shop{
+	float:right;
+	background-image:url(/images/who_shops_bg.png);
+	background-repeat:no-repeat;
+	height:256px;
+	width:325px;
+	font-size:12px;
+	font-weight:bold;
+}
+#who_shops_image{
+	height:197px;
+	width:255px;
+	margin:20px 0 0 20px;
+	position:relative;
+}
+#who_shops_overlay{
+	background-image:url(/images/who_shops_overlay.png);
+	background-repeat:no-repeat;
+	width:258px;
+	height:27px;
+	position:absolute;
+	bottom:0;
+	left:0;
+	z-index:100;
+	color:#fff;
+}
+#who_shops_overlay p{
+	width:258px;
+	height:27px;
+	padding:7px 0 0 10px;
+}
+
+#vintage_spotlight{
+	float:right;
+	background-image:url(/images/vintage_spotlight_bg.png);
+	background-repeat:no-repeat;
+	height:265px;
+	width:257px;
+	margin-right:34px;
+}
+#new_spotlight{
+	float:left;
+	background-image:url(/images/new_spotlight_bg.png);
+	background-repeat:no-repeat;
+	height:265px;
+	width:257px;
+	margin-right:34px;
+}
+
+#footer{
+	width:900px;
+	text-align:right;
+	margin-right:40px;
+	margin-bottom:15px;
+	padding-top:0px;
+	font-size:11px;
+}
+
+/* Visitor Styles */
+#visitor_container{
+	margin-left:auto;
+	margin-right:auto;
+	width:896px;
+}
+
+#visitor{
+	float:left;
+	text-align:center;
+	width:150px;
+	margin:0 10px 0 10px;
+	padding:10px 0 10px 0;
+}

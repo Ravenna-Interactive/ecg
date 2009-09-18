@@ -1,0 +1,94 @@
+#interior_wrapper{
+	width:923px;
+	height:auto;
+	background-image:url(/images/interior_bg.png);
+	background-repeat:repeat-y;
+	margin-right:auto;
+	margin-left:auto;
+	padding:25px 0 10px 45px;
+	position:relative;
+}
+
+#interior_header_absolute{
+	position:absolute;
+	background-image:url(/images/category_title_bg.png);
+	background-repeat:no-repeat;
+	width:346px;
+	height:79px;
+	color:#fff;
+	left:-16px;
+	top:12px;
+}
+#int_header{
+	padding:19px 0 0 90px;
+	font-size:18px;
+	font-weight:bold;
+}
+
+#cb_header_bg{
+	width:915px;
+	height:40px;
+	background-color:#7bbbac;
+	margin:0 0 10px 4px;
+}
+#cb_header_bg p{
+	padding-left:340px;
+	color:#fff;
+	font-size:18px;
+	font-weight:bold;
+	padding-top:8px;
+}
+										/* Brands Listing Styles */
+										
+										
+#brands_wrapper{
+	width:960px;
+	height:auto;
+	padding-left:45px;
+	padding-top:15px;
+}
+#brand_1{
+	width:280px;
+	height:222px;
+	background-image:url(/images/brands_bg_1.png);
+	background-repeat:no-repeat;
+	padding:19px 0 0 25px;
+	float:left;
+}
+#brand_2{
+	width:280px;
+	height:222px;
+	background-image:url(/images/brands_bg_2.png);
+	background-repeat:no-repeat;
+	padding:19px 0 0 25px;
+	float:left;
+}
+#brand_1 img{border:1px #666 solid;}
+#brand_2 img{border:1px #666 solid;}
+
+
+										/* Interior Footer Styles */
+#interior_footer{
+	width:968px;
+	height:64px;
+	background-image:url(/images/interior_footer_bg.png);
+	background-repeat:no-repeat;
+	margin-right:auto;
+	margin-left:auto;
+	margin-bottom:15px;
+}
+#interior_footer p{
+	float:right;
+	padding-right:35px;
+	padding-top:40px;
+	font-size:11px;
+}
+
+
+										/* Interior Admin Styles */
+#interior_form{
+	margin-top:65px;
+}
+#interior_form p{
+	padding-bottom:10px;
+}

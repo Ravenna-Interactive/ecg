@@ -1,0 +1,19 @@
+
+<div id="interior_wrapper">
+    <div id="interior_header_absolute">
+        <p id="int_header"><%= @category.name %></p>
+    </div>
+    
+    <div id="cb_header_bg"><p>Brands</p></div>
+    
+    <div id="brands_wrapper">
+        <% for brand in @brands %>
+            <p id="<%= cycle('brand_1','brand_2') %>"><%= link_to image_tag (brand.photo.url(:original)), category_brand_path(@category, brand) %><p>
+        <% end %>
+        <p id="clear"></p>
+    </div>
+  
+</div>
+
+<div id="interior_footer"><p>&copy; EMERALD CITY GUITARS | <%= link_to 'Privacy Policy', privacy_path %> | Site by <%= link_to "Ravenna Interactive", "http://ravennainteractive.com" %></p></div>
+    

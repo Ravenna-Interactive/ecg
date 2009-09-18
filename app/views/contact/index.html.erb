@@ -1,0 +1,30 @@
+<h1>Contact Form</h1>
+
+<% form_tag :action => "send_mail" do %>
+     <p>
+       <%= label :email, :name, "Name:" %><br />
+       <%= text_field :email, :name %>
+     </p>
+
+     <p>
+       <%= label :email, :address, "Your Email Address:" %><br />
+       <%= text_field :email, :address %>
+     </p>
+     <p>
+            <%= label :email, :phone, "Phone Number:" %><br />
+            <%= text_field :email, :phone %>
+     </p>
+      <p>
+             <%= label :email, :home, "Address:" %><br />
+             <%= text_field :email, :home %>
+      </p>
+  
+     <p>
+          <%= label :email, :product, "Whatcha Lookin Fer:" %><br />
+          <%= text_area :email, :product, :rows => 8, :cols => 50  %>
+     </p>
+
+     <p>
+       <%= submit_tag "Submit" %>
+     </p>
+   <% end %>

@@ -1,0 +1,16 @@
+<h1>Editing visitor</h1>
+
+<% form_for(@visitor) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :caption %><br />
+    <%= f.text_field :caption %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @visitor %> |
+<%= link_to 'Back', visitors_path %>

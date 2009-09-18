@@ -1,0 +1,18 @@
+<p>
+  <b>Name:</b>
+  <%=h @banner.name %>
+</p>
+
+<p>
+  <b>Body:</b>
+  <%=h @banner.body %>
+</p>
+
+<p>
+  <b>Switch:</b>
+  <%=h @banner.switch %>
+</p>
+
+
+<%= link_to 'Edit', edit_banner_path(@banner) %> |
+<%= link_to 'Back', banners_path %>

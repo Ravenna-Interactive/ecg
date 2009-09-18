@@ -1,0 +1,27 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+  <title>Categories: <%= controller.action_name %></title>
+  <%= stylesheet_link_tag 'styles' %>
+</head>
+<body>
+
+<p style="color: green"><%= flash[:notice] %></p>
+<p style="color: green"><%= flash[:error] %></p>
+
+<ul id="navigation">
+    <li><%= link_to 'Home', root_path %></li>
+    <li><%= link_to 'Electric Guitars', electrics_path %></li>
+    <li><%= link_to 'Acoustic Guitars', acoustics_path %></li>
+    <li><%= link_to 'Bass Guitars', bass_path %></li>
+    <li><%= link_to 'Amps', amps_path %></li>
+    <li><%= link_to 'Effects/Other', effects_path %></li>
+</ul>
+
+<%= yield %>
+
+</body>
+</html>

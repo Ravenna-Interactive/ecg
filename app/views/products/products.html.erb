@@ -1,0 +1,8 @@
+<table id="portfolio">
+    <tr>
+    <% for product in @products %>
+              <td><%=h product.title %></td>
+              <td><%=h product.description %></td>
+        <% end %>
+    </tr>
+</table>

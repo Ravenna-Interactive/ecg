@@ -1,0 +1,40 @@
+<h1>Editing product</h1>
+
+<% form_for(@product) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </p>
+  <p>
+    <%= f.label :description %><br />
+    <%= f.text_area :description %>
+  </p>
+  <p>
+   <label for="category">Category<br/></label>
+       <select name="category">
+           <% @cat.each do |category| %> <!-- #do loop,will go on till end of records in table-categories -->
+           <option value="<%= category.id %>">
+           <%= category.name  %><!-- #will display all category names -->
+           </option>
+           <% end %>
+       </select>
+   </p>
+   <p>
+    <label for="brand">Brand:<br/></label>
+        <select name="brand">
+            <% @brand.each do |brand| %> <!-- #do loop,will go on till end of records in table-categories -->
+            <option value="<%= brand.id %>">
+            <%= brand.name  %><!-- #will display all brand names -->
+            </option>
+            <% end %>
+        </select>
+    </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @product %> |
+<%= link_to 'Back', products_path %>

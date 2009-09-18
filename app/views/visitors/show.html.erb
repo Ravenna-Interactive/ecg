@@ -1,0 +1,12 @@
+<p>
+  <b>Caption:</b>
+  <%=h @visitor.caption %>
+</p>
+<p>
+    <b>Photo:</b>
+    <%= image_tag @visitor.photo.url(:thumb) %>
+    </p>
+
+
+<%= link_to 'Edit', edit_visitor_path(@visitor) %> |
+<%= link_to 'Back', visitors_path %>
