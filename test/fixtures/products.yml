@@ -1,9 +1,13 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
 one:
-  title: MyString
+  title: Gibson Guitar
   description: MyText
+  category: electric
+  brand: gibson
 
 two:
-  title: MyString
+  title: Epiphone Guitar
   description: MyText
+  category: acoustic
+  brand: epiphone
