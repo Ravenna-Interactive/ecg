@@ -1,5 +1,7 @@
 
+<%= render :partial => 'shared/brand_list', :object => @category %>
+
 <% for product in @products %>
        <p><%= product.title %> | <%= product.category.name %> | <%= product.brand.name %></p>
-   <% end %>
+<% end %>
 
