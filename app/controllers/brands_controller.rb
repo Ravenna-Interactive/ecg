@@ -15,8 +15,8 @@ class BrandsController < ApplicationController
   # GET /brands/1.xml
   def show
 
+    @category = Category.find(params[:category_id])
     @products = Product.find(:all, :conditions => {:brand_id => params[:id], :category_id => params[:category_id]})
-
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @brand }
