@@ -19,7 +19,10 @@ class CategoriesController < ApplicationController
     @categories = Category.all
 
     respond_to do |format|
-      format.html # show.html.erb
+      format.html do |wants|
+        @products = @category.products.find(:all, :conditions => {:brand_id => @brands.first})
+        render :template => 'brands/show'
+      end
       format.xml  { render :xml => @category }
     end
   end
