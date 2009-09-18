@@ -11,3 +11,9 @@ two:
   description: MyText
   category: acoustic
   brand: epiphone
+
+three:
+  title: Gibson Acoustic
+  description: Acoustic
+  category: acoustic
+  brand: gibson
