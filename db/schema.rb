@@ -40,14 +40,6 @@ ActiveRecord::Schema.define(:version => 20090928235125) do
     t.datetime "updated_at"
   end
 
-  create_table "pages", :force => true do |t|
-    t.string   "title"
-    t.string   "name"
-    t.text     "body"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "photos", :force => true do |t|
     t.integer  "product_id"
     t.datetime "created_at"

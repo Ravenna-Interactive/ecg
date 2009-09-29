@@ -17,3 +17,9 @@ three:
   description: Acoustic
   category: acoustic
   brand: gibson
+  
+four:
+  title: Gibson 2
+  description: a second acoustic gibson
+  category: acoustic
+  brand: gibson
