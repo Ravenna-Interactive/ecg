@@ -23,7 +23,7 @@ class CategoriesController < ApplicationController
       respond_to do |format|
         format.html do |wants|
           @brand = @brands.first
-          @products = @category.products.paginate(:page => params[:page])
+          @products = @category.products.paginate(:conditions => {:brand_id => @brand}, :page => params[:page])
           render :template => 'brands/show'
         end
         format.xml  { render :xml => @category }
