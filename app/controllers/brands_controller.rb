@@ -15,16 +15,13 @@ class BrandsController < ApplicationController
   # GET /brands/1
   # GET /brands/1.xml
   def show
-    @category = Category.find(params[:category_id])
-    @products = Product.find(:all, :conditions => {:brand_id => params[:id], :category_id => params[:category_id]}).paginate(:page => 
-    params[:page], :per_page => 3)
-  
-   # @products = Product.paginate(:page => params[:page], :per_page => 3)
-    respond_to do |format|
-      format.html # show.html.erb
-      format.xml  { render :xml => @brand }
+      @category = Category.find(params[:category_id])
+      @products = Product.find(:all, :conditions => {:brand_id => params[:id], :category_id => params[:category_id]})
+      respond_to do |format|
+        format.html # show.html.erb
+        format.xml  { render :xml => @brand }
+      end
     end
-  end
 
   # GET /brands/new
   # GET /brands/new.xml

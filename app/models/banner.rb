@@ -2,7 +2,7 @@ class Banner < ActiveRecord::Base
   has_attached_file :photo,
     :styles => {
       :thumb => "100x100>", 
-      :original => "400x400>" },
+      :original => "400x400#" },
      
       
       :url => "/system/banners/:id/:basename_:style.:extension",

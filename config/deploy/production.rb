@@ -1,6 +1,6 @@
 
 
-set :user, 'jayboone@emeraldcityguitars.com'
+set :user, 'emeraldcityguitars'
 set :domain, 'emeraldcityguitars.com'
 
 set :deploy_to, "/home/#{user}/#{domain}" 

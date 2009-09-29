@@ -47,7 +47,7 @@ class BannersController < ApplicationController
     respond_to do |format|
       if @banner.save
         flash[:notice] = 'Banner was successfully created.'
-        format.html { redirect_to(banner_url) }
+        format.html { redirect_to(banners_url) }
         format.xml  { render :xml => @banner, :status => :created, :location => @banner }
       else
         format.html { render :action => "new" }
@@ -64,7 +64,7 @@ class BannersController < ApplicationController
     respond_to do |format|
       if @banner.update_attributes(params[:banner])
         flash[:notice] = 'Banner was successfully updated.'
-        format.html { redirect_to(banner_url) }
+        format.html { redirect_to(banners_url) }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }

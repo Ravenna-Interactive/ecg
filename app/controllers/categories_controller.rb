@@ -11,34 +11,35 @@ class CategoriesController < ApplicationController
       format.html # index.html.erb
       format.xml  { render :xml => @categories }
     end
-  #end
+  end
 
   # GET /categories/1
   # GET /categories/1.xml
   def show
-    @category = Category.find(params[:id])
-    @brands = @category.brands
+      @category = Category.find(params[:id])
+      @brands = @category.brands
+      @categories = Category.all
 
-    respond_to do |format|
-      format.html do |wants|
-        @brand = @brands.first
-        @products = @category.products.find(:all, :conditions => {:brand_id => @brand})
-        render :template => 'brands/show'
+      respond_to do |format|
+        format.html do |wants|
+          @brand = @brands.first
+          @products = @category.products.find(:all, :conditions => {:brand_id => @brand})
+          render :template => 'brands/show'
+        end
+        format.xml  { render :xml => @category }
       end
-      format.xml  { render :xml => @category }
     end
-  end
 
   # GET /categories/new
   # GET /categories/new.xml
-  #def new
-  #  @category = Category.new
+  def new
+    @category = Category.new
 
-  #  respond_to do |format|
-  #    format.html # new.html.erb
-  #    format.xml  { render :xml => @category }
-  #  end
-  #end
+    respond_to do |format|
+      format.html # new.html.erb
+      format.xml  { render :xml => @category }
+    end
+  end
 
   # GET /categories/1/edit
   def edit
@@ -82,12 +83,12 @@ class CategoriesController < ApplicationController
   # DELETE /categories/1
   # DELETE /categories/1.xml
   #def destroy
-  #  @category = Category.find(params[:id])
+  # @category = Category.find(params[:id])
   #  @category.destroy
 
   #  respond_to do |format|
   #    format.html { redirect_to(categories_url) }
   #    format.xml  { head :ok }
   #  end
-  end
+  #end
 end

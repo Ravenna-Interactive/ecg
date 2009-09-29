@@ -1,7 +1,7 @@
 <script type="text/javascript">
 <% if Banner.find(:first).switch == true %>
     $(document).ready(function(){
-        tb_show(null,"/find_banner?height=400&width=400", "");
+        tb_show(null,"/find_banner?height=415&width=400", "");
     });
 <% end %>
 </script>
@@ -39,6 +39,8 @@
     <div id="new_spotlight"></div>
     
     <p id="clear">&nbsp;</p>
-    <p id="footer">&copy; EMERALD CITY GUITARS | <% if logged_in? %><%= link_to "Log Out", logout_path %><% else %><%= link_to "Login", login_path %><% end %> | <%= link_to "Site by Ravenna Interactive", "http://ravennainteractive.com" %>  </p>
+    <p id="footer">&copy; EMERALD CITY GUITARS | <% if logged_in? %><%= link_to "Log Out", logout_path %> | <%= link_to "Admin", admin_path %>      
+        
+        <% else %><%= link_to "Login", login_path %> | <%= link_to "Site by Ravenna Interactive", "http://ravennainteractive.com" %> <% end %>  </p>
 </div>
 
