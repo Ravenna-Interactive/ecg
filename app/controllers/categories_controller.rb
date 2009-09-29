@@ -18,12 +18,12 @@ class CategoriesController < ApplicationController
   def show
       @category = Category.find(params[:id])
       @brands = @category.brands
-      @categories = Category.all
+      @categories = Category.find(:all)
 
       respond_to do |format|
         format.html do |wants|
           @brand = @brands.first
-          @products = @category.products.find(:all, :conditions => {:brand_id => @brand})
+          @products = @category.products.paginate(:page => params[:page])
           render :template => 'brands/show'
         end
         format.xml  { render :xml => @category }

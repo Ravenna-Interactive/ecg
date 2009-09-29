@@ -86,7 +86,7 @@ module Attachinator
           $('add_#{options[:wrapper_class]}').observe('click', function(e){
             Event.stop(e);
             var $fs = $$(".#{options[:wrapper_class]}");
-            var $fg = $fs.last();
+            var $fg = $fs.find(':last');
             var $template = $fg.innerHTML;
             $template = $template.replace(/#{name_pattern}/gi, "$1"+$fs.length+"$2");
             $template = $template.replace(/#{id_pattern}/gi, "$1"+$fs.length+"$2");

@@ -45,7 +45,7 @@
     
     <div id="add_photo">
          <p><%= f.label 'Add/Remove Photos:' %><br>
-         <% f.attachment_fields_for :photos, :data, :new_objects => 0 do |attachment_fields| %>
+         <% f.attachment_fields_for :photos, :data, :new_objects => 0, :js_lib => :jquery do |attachment_fields| %>
      		<%= image_tag(attachment_fields.object.data(:thumb)) unless attachment_fields.object.data.nil? %>
 
      		<%= attachment_fields.label :data, 'Photo' %>
