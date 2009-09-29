@@ -1,0 +1,27 @@
+<%= render :partial => 'shared/interior_hero' %>
+<div id="interior_wrapper">
+    <div id="interior_header_absolute">
+        <h6 id="int_header">Pages</h6>
+    </div>
+    
+    <div id="interior_sub_head"><h5 id="sub_green_head">Emerald City Guitars</h5></div>
+<div id="interior_pad">
+
+
+<table cellspacing="0" cellpadding="0">
+  <tr>
+    <th>Name</th>
+  </tr>
+
+<% @pages.each do |page| %>
+  <tr>
+    <td><%=h page.name %></td>
+    <td>| <%= link_to 'Edit', edit_page_path(page) %></td>
+  </tr>
+<% end %>
+</table>
+
+
+</div>
+</div>
+<%= render :partial => 'shared/interior_footer' %>

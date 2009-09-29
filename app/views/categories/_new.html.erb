@@ -1,0 +1,29 @@
+<%= render :partial => 'shared/interior_hero' %>
+
+<div id="interior_wrapper">
+    <div id="interior_header_absolute">
+        <p id="int_header">New Category</p>
+    </div>
+    
+    <div id="interior_sub_head"></div>
+    
+ <div id="interior_pad">
+
+
+<% form_for(@category) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.submit 'Create' %>
+  </p>
+<% end %>
+
+<%= link_to 'Back', categories_path %>
+
+</div>
+</div>
+<%= render :partial => 'shared/interior_footer' %>

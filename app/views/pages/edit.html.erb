@@ -1,18 +1,32 @@
-<h1>Editing page</h1>
+<%= render :partial => 'shared/interior_hero' %>
+<div id="interior_wrapper">
+    <div id="interior_header_absolute">
+        <h6 id="int_header">Edit <%= @page.name%></h6>
+    </div>
+    
+    <div id="interior_sub_head"><h5 id="sub_green_head"></h5></div>
 
+<div id="interior_pad">
+    <div id="interior_right">
+        <p><%= link_to "Textile Reference", "http://redcloth.org/textile"%> - This is a reference for how to edit text. <br><br><b>Basic reference</b><br>
+            p. This is one paragraph. = Paragraph with a hard return before the next<br>
+            h1. This is a Heading = Heading text.  Use h1 - h6 for different sized headers<br>
+            * Text = Bulleted list item<br>
+            # text = Numbered list item<br>
+            "Link Text":http://link.com  = Link Text, that will link to the url listed<br>
+            
+            
+        
+        </p>
+    </div>
+    
+    
 <% form_for(@page) do |f| %>
   <%= f.error_messages %>
 
+
   <p>
-    <%= f.label :title %><br />
-    <%= f.text_field :title %>
-  </p>
-  <p>
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
-  </p>
-  <p>
-    <%= f.label :body %><br />
+    <%= f.label "Edit Body Text" %><br />
     <%= f.text_area :body %>
   </p>
   <p>
@@ -22,3 +36,7 @@
 
 <%= link_to 'Show', @page %> |
 <%= link_to 'Back', pages_path %>
+
+</div>
+</div>
+<%= render :partial => 'shared/interior_footer' %>

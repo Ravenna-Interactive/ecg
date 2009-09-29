@@ -1,0 +1,29 @@
+<script type="text/javascript">
+$(document).ready(function() {
+    $('#main_interior_image').cycle({
+		fx: 'fade', // choose your transition type, ex: fade, scrollUp, shuffle, etc...
+		timeout: 7000,
+		speed: 3000,
+		random: 1
+	});
+});
+</script>
+<div id="main_interior_image_container">
+        <div id="main_interior_image">
+            <%= image_tag "/images/interior_hero/int_hero_1.png", "width" => 968, "height" => 223 %>
+            <%= image_tag "/images/interior_hero/int_hero_2.png", "width" => 968, "height" => 223 %>
+            
+        </div><!-- End Main Image -->
+</div><!-- End Main Image Container-->
+
+<div id="middle_blue">
+    <p id="inventory_nav_title">INVENTORY PAGES:</p>
+
+        <ul id="inventory_nav">
+            <% @categories.each do |category| %>
+                <li><%= link_to (category.name), category %></li>
+                <li>|</li>
+            <% end %>
+        </ul>
+    
+</div><!-- End Middle Blue-->

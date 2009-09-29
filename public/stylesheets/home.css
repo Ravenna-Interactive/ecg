@@ -32,6 +32,7 @@ a:hover {color:#999; text-decoration:underline;}
 }
 #logo{
 	position:absolute;
+	z-index:1000;
 	top:16px;
 	left:-7px;
 }
@@ -103,18 +104,38 @@ a:hover {color:#999; text-decoration:underline;}
 	background-color:#dcc959;
 	text-decoration:none;
 }
-/*  Main Image Styles */
+													/*  Main Image Styles */
 #main_image_container{
 	background-image:url(/images/main_image_bg.png);
 	background-repeat: repeat-x;
 	width:100%;
 	height:325px;
+	position:relative;
 }
 #main_image{
 	margin-left:auto;
 	margin-right:auto;
 	width:968px;
 	height:325px;
+}
+#tell_us_absolute{
+	position:absolute;
+	top:275px;
+	left:785px;
+}
+
+													/*  Main Image Styles */
+#main_interior_image_container{
+	background-image:url(/images/main_image_bg.png);
+	background-repeat: repeat-x;
+	width:100%;
+	height:223px;
+}
+#main_interior_image{
+	margin-left:auto;
+	margin-right:auto;
+	width:968px;
+	height:223px;
 }
 
 
@@ -217,25 +238,10 @@ a:hover {color:#999; text-decoration:underline;}
 }
 
 #footer{
-	width:900px;
+	width:916px;
 	text-align:right;
-	margin-right:40px;
+	margin-right:0px;
 	margin-bottom:15px;
-	padding-top:0px;
+	padding-top:4px;
 	font-size:11px;
-}
-
-/* Visitor Styles */
-#visitor_container{
-	margin-left:auto;
-	margin-right:auto;
-	width:896px;
-}
-
-#visitor{
-	float:left;
-	text-align:center;
-	width:150px;
-	margin:0 10px 0 10px;
-	padding:10px 0 10px 0;
 }

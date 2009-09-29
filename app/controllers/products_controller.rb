@@ -1,5 +1,6 @@
 class ProductsController < ApplicationController
    before_filter :find_categories
+     before_filter :login_required, :only => [ :index, :new, :edit ]
   # GET /products
   # GET /products.xml
   def index
@@ -36,6 +37,7 @@ class ProductsController < ApplicationController
     @product = Product.find(params[:id])
     @cat = Category.find(:all)
     @brand = Brand.find(:all)
+    @product.photos.build if @product.photos.first.nil?
   end
 
   # POST /products
@@ -59,6 +61,12 @@ class ProductsController < ApplicationController
   # PUT /products/1
   # PUT /products/1.xml
   def update
+    params[:photo_ids] ||= []
+        @product = Product.find(params[:id])
+        unless params[:photo_ids].empty?
+          Photo.destroy_pics(params[:id], params[:photo_ids])
+        end
+    
     @product = Product.find(params[:id])
     @product.category_id = (params[:category])
     @product.brand_id = (params[:brand])
@@ -85,10 +93,5 @@ class ProductsController < ApplicationController
       format.xml  { head :ok }
     end
   end
-  def products
-       # default query if no parameter:
-       @products = Category.find(:all, :order => 'created_at DESC').products unless params[:id]
-       # otherwise, fetch the requested category:
-       @products ||= Category.find_by_name(params[:id], :order => 'created_at DESC').products
-   end
+
 end

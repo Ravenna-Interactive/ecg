@@ -1,0 +1,35 @@
+<div id="interior_wrapper">
+    <div id="interior_header_absolute">
+        <h6 id="int_header">Edit a Staff</h6>
+    </div>
+    
+    <div id="interior_sub_head"></div>
+<div id="interior_pad">
+
+<% form_for(@staff) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :bio %><br />
+    <%= f.text_area :bio %>
+  </p>
+  <p>
+    <%= f.label :link %><br />
+    <%= f.text_field :link %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @staff %> |
+<%= link_to 'Back', staffs_path %>
+
+</div>
+</div>
+
+<%= render :partial => 'shared/interior_footer' %>

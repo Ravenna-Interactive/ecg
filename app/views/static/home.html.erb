@@ -1,16 +1,33 @@
-<!--<script type="text/javascript">
+<script type="text/javascript">
 <% if Banner.find(:first).switch == true %>
     $(document).ready(function(){
         tb_show(null,"/find_banner?height=400&width=400", "");
     });
 <% end %>
-</script>-->
+</script>
+
+<div id="main_image_container">
+        <div id="main_image"><%= image_tag "/images/main_image.png" %></div><!-- end Main Image -->
+        <div id="tell_us_absolute"><%= link_to image_tag('tell_us.png'), wish_list_path %></div>
+</div><!-- End Main Image Container-->
+
+<div id="middle_blue">
+    <p id="inventory_nav_title">INVENTORY PAGES:</p>
+
+        <ul id="inventory_nav">
+            <% @categories.each do |category| %>
+                <li><%= link_to (category.name), category %></li>
+                <li>|</li>
+            <% end %>
+        </ul>
+    
+</div><!-- End Middle Blue-->
 
 <div id="home_guts">
     <div id="recent_shop"> 
         <div id="who_shops_image">
             <% for visitor in @visitors -%>
-                <%= image_tag visitor.photo.url(:original) %>
+                <%= link_to (image_tag visitor.photo.url(:original)), visitors_path  %>
             <% end %>
             <div id="who_shops_overlay">
                 <p>Who Shops at Emerald City Guitars?</p>
@@ -22,6 +39,6 @@
     <div id="new_spotlight"></div>
     
     <p id="clear">&nbsp;</p>
-    <p id="footer">&copy; EMERALD CITY GUITARS | <%= link_to 'Privacy Policy', privacy_path %><br> <%= link_to "Site by Ravenna Interactive", "http://ravennainteractive.com" %>  </p>
+    <p id="footer">&copy; EMERALD CITY GUITARS | <% if logged_in? %><%= link_to "Log Out", logout_path %><% else %><%= link_to "Login", login_path %><% end %> | <%= link_to "Site by Ravenna Interactive", "http://ravennainteractive.com" %>  </p>
 </div>
 

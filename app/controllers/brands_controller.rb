@@ -1,5 +1,6 @@
 class BrandsController < ApplicationController
    before_filter :find_categories
+   before_filter :login_required, :only => [ :index, :new, :edit ]
   # GET /brands
   # GET /brands.xml
   def index
@@ -14,9 +15,11 @@ class BrandsController < ApplicationController
   # GET /brands/1
   # GET /brands/1.xml
   def show
-
     @category = Category.find(params[:category_id])
-    @products = Product.find(:all, :conditions => {:brand_id => params[:id], :category_id => params[:category_id]})
+    @products = Product.find(:all, :conditions => {:brand_id => params[:id], :category_id => params[:category_id]}).paginate(:page => 
+    params[:page], :per_page => 3)
+  
+   # @products = Product.paginate(:page => params[:page], :per_page => 3)
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @brand }
@@ -75,13 +78,13 @@ class BrandsController < ApplicationController
 
   # DELETE /brands/1
   # DELETE /brands/1.xml
-  def destroy
-    @brand = Brand.find(params[:id])
-    @brand.destroy
+ # def destroy
+  #  @brand = Brand.find(params[:id])
+   # @brand.destroy
 
-    respond_to do |format|
-      format.html { redirect_to(brands_url) }
-      format.xml  { head :ok }
-    end
-  end
+    #respond_to do |format|
+     # format.html { redirect_to(brands_url) }
+      #format.xml  { head :ok }
+  #  end
+  # end
 end

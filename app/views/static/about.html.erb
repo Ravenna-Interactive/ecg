@@ -1,0 +1,32 @@
+
+<%= render :partial => 'shared/interior_hero' %>
+
+<div id="interior_wrapper">
+    <div id="interior_header_absolute">
+        <h6 id="int_header">About</h6>
+    </div>
+    
+    <div id="interior_sub_head"><h5 id="sub_green_head">Emerald City Guitars</h5></div>
+    
+    <div id="product_listing_container">
+      <p><%= @page.body %></p>
+    </div>
+    
+    
+
+    <div id="brands_nav_container">
+            <div id="brand_list">
+                <ul id="about_nav">
+                    <!-- link_to_unless_current -->
+                    <li><%= link_to 'Staff', staffs_path %></li>
+                    <li><%= link_to 'History', history_path%></li>
+                    <li><%= link_to 'Shop Info', shop_info_path%></li>
+                    <li><%= link_to 'Guests to the Shop', visitors_path %></li>
+                <ul>
+            </div>
+            <div id="brands_listing_bottom"></div>
+       </div>
+
+</div>
+
+<%= render :partial => 'shared/interior_footer' %>

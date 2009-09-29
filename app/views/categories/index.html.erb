@@ -1,9 +1,13 @@
+<%= render :partial => 'shared/interior_hero' %>
+
 <div id="interior_wrapper">
     <div id="interior_header_absolute">
-        <p id="int_header">Categories Listing</p>
+        <p id="int_header">Categories</p>
     </div>
     
-    <div id="cb_header_bg"><p>Brands</p></div>
+    <div id="interior_sub_head"></div>
+    
+ <div id="interior_pad">
 
 
 <table>
@@ -14,9 +18,8 @@
 <% @categories.each do |category| %>
   <tr>
     <td><%=h category.name %></td>
-    <td><%= link_to 'Show', category %></td>
-    <td><%= link_to 'Edit', edit_category_path(category) %></td>
-    <td><%= link_to 'Destroy', category, :confirm => 'Are you sure?', :method => :delete %></td>
+ 
+    <td>| <%= link_to 'Edit', edit_category_path(category) %></td>
   </tr>
 <% end %>
 </table>
@@ -26,4 +29,5 @@
 <%= link_to 'New category', new_category_path %>
 
 </div>
-<div id="interior_footer"><p>&copy; EMERALD CITY GUITARS | <%= link_to 'Privacy Policy', privacy_path %> | Site by <%= link_to "Ravenna Interactive", "http://ravennainteractive.com" %></p></div>
+</div>
+<%= render :partial => 'shared/interior_footer' %>

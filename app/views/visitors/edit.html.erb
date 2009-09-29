@@ -1,10 +1,11 @@
-
+<%= render :partial => 'shared/interior_hero' %>
 <div id="interior_wrapper">
     <div id="interior_header_absolute">
-        <p id="int_header">Visitors</p>
+        <h6 id="int_header">Edit a Guest</h6>
     </div>
     
-    <div id="cb_header_bg"><p></p></div>
+    <div id="interior_sub_head"></div>
+<div id="interior_pad">
     
 <h1>Editing visitor</h1>
 
@@ -22,6 +23,6 @@
 
 <%= link_to 'Show', @visitor %> |
 <%= link_to 'Back', visitors_path %>
-
-
-<div id="interior_footer"><p>&copy; EMERALD CITY GUITARS | <%= link_to 'Privacy Policy', privacy_path %> | Site by <%= link_to "Ravenna Interactive", "http://ravennainteractive.com" %></p></div>
+</div>
+</div>
+<%= render :partial => 'shared/interior_footer' %>

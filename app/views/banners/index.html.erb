@@ -1,20 +1,28 @@
-<h1>Listing banners</h1>
 
-<table>
+<%= render :partial => 'shared/interior_hero' %>
+
+<div id="interior_wrapper">
+    <div id="interior_header_absolute">
+        <p id="int_header">Edit the Banner</p>
+    </div>
+    
+    <div id="interior_sub_head"><p></p></div>
+  
+<div id="interior_pad">
+
+<table cellspacing="0" cellpadding="0">
   <tr>
+    <th>Photo</th>
     <th>Name</th>
-    <th>Body</th>
     <th>Switch</th>
   </tr>
 
 <% @banners.each do |banner| %>
   <tr>
+    <td><%= image_tag banner.photo.url(:thumb) unless banner.photo.nil?  %></td>
     <td><%=h banner.name %></td>
-    <td><%=h banner.body %></td>
     <td><%=h banner.switch %></td>
-    <td><%= link_to 'Show', banner %></td>
-    <td><%= link_to 'Edit', edit_banner_path(banner) %></td>
-    <td><%= link_to 'Destroy', banner, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= link_to 'Show', banner %> | <%= link_to 'Edit', edit_banner_path(banner) %> | <%= link_to 'Destroy', banner, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>
@@ -22,3 +30,6 @@
 <br />
 
 <%= link_to 'New banner', new_banner_path %>
+</div>
+</div>
+<%= render :partial => 'shared/interior_footer' %>

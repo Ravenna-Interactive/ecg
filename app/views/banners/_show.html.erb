@@ -1,0 +1,33 @@
+
+<%= render :partial => 'shared/interior_hero' %>
+
+<div id="interior_wrapper">
+    <div id="interior_header_absolute">
+        <p id="int_header"> <%=h @banner.name %></p>
+    </div>
+    
+    <div id="interior_sub_head"></div>
+    
+ <div id="interior_pad">
+<p>
+  <b>Name:</b>
+  <%=h @banner.name %>
+</p>
+
+<p>
+  <b>Body:</b>
+  <%=h @banner.body %>
+</p>
+
+<p>
+  <b>Switch:</b>
+  <%=h @banner.switch %>
+</p>
+
+
+<%= link_to 'Edit', edit_banner_path(@banner) %> |
+<%= link_to 'Back', banners_path %>
+
+</div>
+</div>
+<%= render :partial => 'shared/interior_footer' %>

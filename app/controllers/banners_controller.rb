@@ -1,5 +1,6 @@
 class BannersController < ApplicationController
    before_filter :find_categories
+   before_filter :login_required, :only => [ :index, :new, :edit ]
   # GET /banners
   # GET /banners.xml
   def index
@@ -13,14 +14,14 @@ class BannersController < ApplicationController
 
   # GET /banners/1
   # GET /banners/1.xml
-  def show
-    @banner = Banner.find(params[:id])
+  #def show
+   # @banner = Banner.find(params[:id])
 
-    respond_to do |format|
-      format.html # show.html.erb
-      format.xml  { render :xml => @banner }
-    end
-  end
+    #respond_to do |format|
+     # format.html # show.html.erb
+      #format.xml  { render :xml => @banner }
+  #  end
+#  end
 
   # GET /banners/new
   # GET /banners/new.xml
@@ -46,7 +47,7 @@ class BannersController < ApplicationController
     respond_to do |format|
       if @banner.save
         flash[:notice] = 'Banner was successfully created.'
-        format.html { redirect_to(@banner) }
+        format.html { redirect_to(banner_url) }
         format.xml  { render :xml => @banner, :status => :created, :location => @banner }
       else
         format.html { render :action => "new" }
@@ -63,7 +64,7 @@ class BannersController < ApplicationController
     respond_to do |format|
       if @banner.update_attributes(params[:banner])
         flash[:notice] = 'Banner was successfully updated.'
-        format.html { redirect_to(@banner) }
+        format.html { redirect_to(banner_url) }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }

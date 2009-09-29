@@ -1,21 +1,30 @@
-<h1>Listing products</h1>
+<%= render :partial => 'shared/interior_hero' %>
+<div id="interior_wrapper">
+    <div id="interior_header_absolute">
+        <h6 id="int_header">Products</h6>
+    </div>
+    
+    <div id="interior_sub_head"><h5 id="sub_green_head"></h5></div>
+<div id="interior_pad">
 
-<table>
+<table cellspacing="0" cellpadding="0">
   <tr>
     <th>Title</th>
-    <th>Description</th>
+    <th>Price</th>
+    <th>Main Image</th>
     <th>Category</th>
     <th>Brand</th>
   </tr>
 
 <% @products.each do |product| %>
-  <tr>
+  <tr class="<%= cycle("even","odd")%>">
     <td><%=h product.title %></td>
-    <td><%=h product.description %></td>
+    <td>$<%=h product.price %></td>
+    <td><%= image_tag(product.front_photo.data.url(:tiny)) unless product.front_photo.nil? %></td>
+    <td><%=h product.category.name %></td>
+    <td><%=h product.brand.name %></td>
 
-    <td><%= link_to 'Show', product %></td>
-    <td><%= link_to 'Edit', edit_product_path(product) %></td>
-    <td><%= link_to 'Destroy', product, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= link_to 'Show', product %> | <%= link_to 'Edit', edit_product_path(product) %> | <%= link_to 'Destroy', product, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>
@@ -23,3 +32,6 @@
 <br />
 
 <%= link_to 'New product', new_product_path %>
+</div>
+</div>
+<%= render :partial => 'shared/interior_footer' %>

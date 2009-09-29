@@ -1,0 +1,29 @@
+<%= render :partial => 'shared/interior_hero' %>
+<div id="interior_wrapper">
+    <div id="interior_header_absolute">
+        <h6 id="int_header">Login</h6>
+    </div>
+    
+    <div id="interior_sub_head"><h5 id="sub_green_head"></h5></div>
+    
+    <div id="cb_header_bg"></div>
+<div id="interior_pad">
+
+<% form_tag session_path do -%>
+<p><%= label_tag 'login' %><br />
+<%= text_field_tag 'login', @login %></p>
+
+<p><%= label_tag 'password' %><br/>
+<%= password_field_tag 'password', nil %></p>
+
+<!-- Uncomment this if you want this functionality
+<p><%= label_tag 'remember_me', 'Remember me' %>
+<%= check_box_tag 'remember_me', '1', @remember_me %></p>
+-->
+
+<p><%= submit_tag 'Log in' %></p>
+<% end -%>
+
+</div>
+</div>
+<%= render :partial => 'shared/interior_footer' %>

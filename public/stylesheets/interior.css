@@ -1,13 +1,28 @@
 #interior_wrapper{
-	width:923px;
+	width:968px;
 	height:auto;
 	background-image:url(/images/interior_bg.png);
 	background-repeat:repeat-y;
 	margin-right:auto;
 	margin-left:auto;
-	padding:25px 0 10px 45px;
+	padding:25px 0 10px 0;
 	position:relative;
+	color:#333;
 }
+
+#interior_pad{
+	padding:35px 50px 0 50px;
+}
+
+#interior_pad p{
+	padding-top:10px;
+}
+
+#interior_pad td{
+	padding:5px 15px 5px 2px;
+	border-bottom:1px solid #999;
+}
+
 
 #interior_header_absolute{
 	position:absolute;
@@ -17,56 +32,195 @@
 	height:79px;
 	color:#fff;
 	left:-16px;
-	top:12px;
+	top:13px;
 }
 #int_header{
-	padding:19px 0 0 90px;
+	text-align:right;
+	padding:14px 60px 0 0;
 	font-size:18px;
 	font-weight:bold;
 }
 
-#cb_header_bg{
-	width:915px;
-	height:40px;
+#interior_sub_head{
+	width:630px;
+	height:37px;
 	background-color:#7bbbac;
-	margin:0 0 10px 4px;
+	margin-left:4px;
+	padding-left:330px;
+	padding-top:3px;
 }
-#cb_header_bg p{
-	padding-left:340px;
+#interior_sub_head p{
+
 	color:#fff;
+
 	font-size:18px;
-	font-weight:bold;
-	padding-top:8px;
 }
-										/* Brands Listing Styles */
-										
-										
-#brands_wrapper{
-	width:960px;
+
+									/* Brands Styles */
+#brands_nav_container{
+	width:190px;
 	height:auto;
-	padding-left:45px;
-	padding-top:15px;
+	margin-left:4px;
+	display:block;
 }
-#brand_1{
-	width:280px;
-	height:222px;
-	background-image:url(/images/brands_bg_1.png);
+#brand_list{
+	background-image:url(/images/brand_nav_bg_2.jpg);
+	background-repeat:repeat-y;	
+	height:auto;
+	min-height:300px;
+	width:190px;
+	padding-top:30px;
+}
+#brand_list ul{
+	list-style-type:none;
+}
+#brand_list ul li{
+	padding:4px 0 4px 40px;
+	font-size:12px;
+}
+#brands_listing_bottom{
+	background-image:url(/images/brands_nav_bg_bottom.jpg);
 	background-repeat:no-repeat;
-	padding:19px 0 0 25px;
+	height:70px;
+	width:190px;
+}
+										/* Product listing Styles */
+#product_listing_container{
+	float:right;
+	width:770px;
+	margin-right:4px;
+	height:auto;
+	padding-top:20px;
+}
+#product_listing{
+	width:770px;
+}
+#product_listing .blue{
+	width:770px;
+	background-color:#bdddd5;
+}
+#product_listing .white{
+	width:770px;
+	background-color:#fff;
+}
+
+.product{
+	width:180px;
+	height:230px;
+	font-size:12px;
+	padding-top:30px;
+	margin-left:50px;
+}
+
+.product_image{
+	background-image:url(/images/product_photo_frame.png);
+	background-repeat:no-repeat;
+	width:167px;
+	height:132px;
+}
+.product_image img{
+	margin:-1px 0 0 13px;
+	border:1px solid #999;
+}
+.product_info{
+	padding-top:20px;
+	padding-bottom:30px;
+}
+.even{
+	
+}
+.odd{
+	background-color:#ccc;
+}
+
+										/* Product #show styles */
+#one_product{
+	font-size:12px;
+}
+#one_product img{
+	text-align:left;
+}
+#one_product #product_main_image{
 	float:left;
 }
-#brand_2{
-	width:280px;
-	height:222px;
-	background-image:url(/images/brands_bg_2.png);
-	background-repeat:no-repeat;
-	padding:19px 0 0 25px;
-	float:left;
+#one_product #product_main_text{
+	float:right;
+	width:705px;
 }
-#brand_1 img{border:1px #666 solid;}
-#brand_2 img{border:1px #666 solid;}
 
+#one_product #product_main_image img{
+	border:1px solid #666;
+	padding:2px;
+}
 
+										/* Staff Styles */
+#staff{
+	border-bottom:1px dotted #999;
+	padding:10px 15px 15px 15px;
+
+}
+										
+#staff tr td{
+	width:670px;
+
+}
+#staff tr td img{padding:2px; border:1px solid #777; margin:0 5px 5px 0;}
+
+.staff_name{font-size:12px; font-weight:bold;}
+.staff_link{font-size:12px;}
+.staff_bio{font-size:12px;}
+
+										/* About Styles */
+										
+#product_listing_container p{
+	padding:10px 50px 10px 50px;
+}
+										
+										/* Contact Form Styles */
+#contact_form{
+		padding:35px 50px 0 50px;
+}
+
+										/* Visitor Styles */
+#visitor_listing{
+	float:right;
+	width:770px;
+	margin-right:4px;
+	height:auto;
+	padding-top:30px;
+}
+
+#visitor{
+	float:left;
+	text-align:center;
+	width:150px;
+	margin:0 10px 0 10px;
+	padding:10px 0 10px 0;
+}
+
+/*
+#visitor{
+	float:right;
+	width:770px;
+	margin-right:4px;
+	height:auto;
+	display:inline;
+	padding-top:20px;
+}*/
+										
+#contact_form p{
+	font-size:12px;
+	padding:5px;
+}
+										/* Interior Styles */
+#interior_right{
+	float:right;
+	width:400px;
+	padding-top:30px;
+	font-size:12px;
+}
+										
+										
 										/* Interior Footer Styles */
 #interior_footer{
 	width:968px;
@@ -91,4 +245,20 @@
 }
 #interior_form p{
 	padding-bottom:10px;
+}
+
+#pages_edit{
+	border:1px solid #999;
+	padding:5px;
+	padding-left:20px;
+	width:180px;
+}
+#other_edit{
+	margin-top:15px;
+}
+#admin_list{
+	list-style-type:none;
+}
+#admin_list li{
+	padding:3px 0 3px 0;
 }

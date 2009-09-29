@@ -1,5 +1,6 @@
 class VisitorsController < ApplicationController
    before_filter :find_categories
+   before_filter :login_required, :only => [ :new, :edit ]
   # GET /visitors
   # GET /visitors.xml
   def index
@@ -13,14 +14,14 @@ class VisitorsController < ApplicationController
 
   # GET /visitors/1
   # GET /visitors/1.xml
-  def show
-    @visitor = Visitor.find(params[:id])
+  #def show
+   # @visitor = Visitor.find(params[:id])
 
-    respond_to do |format|
-      format.html # show.html.erb
-      format.xml  { render :xml => @visitor }
-    end
-  end
+    #respond_to do |format|
+     # format.html # show.html.erb
+      #format.xml  { render :xml => @visitor }
+    #end
+  #end
 
   # GET /visitors/new
   # GET /visitors/new.xml
@@ -46,7 +47,7 @@ class VisitorsController < ApplicationController
     respond_to do |format|
       if @visitor.save
         flash[:notice] = 'Visitor was successfully created.'
-        format.html { redirect_to(@visitor) }
+        format.html { redirect_to(index) }
         format.xml  { render :xml => @visitor, :status => :created, :location => @visitor }
       else
         format.html { render :action => "new" }
@@ -63,7 +64,7 @@ class VisitorsController < ApplicationController
     respond_to do |format|
       if @visitor.update_attributes(params[:visitor])
         flash[:notice] = 'Visitor was successfully updated.'
-        format.html { redirect_to(@visitor) }
+        format.html { redirect_to(index) }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }

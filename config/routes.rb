@@ -1,9 +1,21 @@
 ActionController::Routing::Routes.draw do |map|
+  map.logout '/logout', :controller => 'sessions', :action => 'destroy'
+  map.login '/login', :controller => 'sessions', :action => 'new'
+  map.register '/register', :controller => 'users', :action => 'create'
+  map.signup '/signup', :controller => 'users', :action => 'new'
+  map.resources :users
+
+  map.resource :session
+
+  map.resources :staffs
+ # map.staff 'staff', :controller => 'staffs', :action => 'index'
+
   map.resources :brands
 
   map.resources :banners
 
   map.resources :visitors
+  map.visitors 'visitors', :controller => 'visitors', :action => 'index'
 
   map.resources :pages
 
@@ -20,7 +32,8 @@ map.resources :categories
 
   
   map.find_banner 'find_banner', :controller => 'banners', :action => 'find_banner'
-
+  map.contact 'contact', :controller => 'contact', :action => 'index'
+  map.wish_list 'wish_list', :controller => 'wish_list', :action => 'index'
   
   map.with_options :controller => 'products', :action => 'products' do |product|
     product.acoustics '/acoustics',     :id => 'acoustics'
@@ -33,8 +46,10 @@ map.resources :categories
   map.with_options :controller => 'static' do |static|
     static.home 'home', :action => 'home'
     static.about 'about', :action => 'about'
-    static.links 'links', :action => 'links'
-    static.privacy 'privacy', :action => 'privacy'
+    static.history 'history', :action => 'history'
+    static.shop_info 'shop_info', :action => 'shop_info'
+    static.admin 'admin', :action => 'admin'
+
   end
   
   

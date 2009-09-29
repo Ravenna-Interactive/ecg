@@ -1,28 +1,38 @@
 
 <div id="interior_wrapper">
     <div id="interior_header_absolute">
-        <p id="int_header">Visitors</p>
+        <h6 id="int_header">Recent Guests</h6>
     </div>
     
-    <div id="cb_header_bg"><p></p></div>
+    <div id="interior_sub_head"></div>
 
+<div id="visitor_listing"
 <% @visitors.each do |visitor| %>
 <div id="visitor">
     <p>
-       <%= image_tag visitor.photo.url(:visitor)%><br>
+       
+       <%= link_to(image_tag(visitor.photo.url(:visitor)), visitor.photo.url(:original), :class => "thickbox") %>
+       <br>
         <%=h visitor.caption %>
     </p>
-    
-    <p><%= link_to 'Show', visitor %> | 
-       <%= link_to 'Edit', edit_visitor_path(visitor) %> | 
-       <%= link_to 'Destroy', visitor, :confirm => 'Are you sure?', :method => :delete %>
-    </p>
+    <% if logged_in? %> 
+    <p><%= link_to 'Edit', edit_visitor_path(visitor) %> | <%= link_to 'Destroy', visitor, :confirm => 'Are you sure?', :method => :delete %>
+    </p><% end %>
 </div>
+
 <% end %>
 
-    <p id="clear">
-        <%= link_to 'New visitor', new_visitor_path %>
-    </p>
+ <% if logged_in? %> 
+ <p><%= link_to 'New Guest', new_visitor_path %></p>
+ <% end %>
 </div>
 
-<div id="interior_footer"><p>&copy; EMERALD CITY GUITARS | <%= link_to 'Privacy Policy', privacy_path %> | Site by <%= link_to "Ravenna Interactive", "http://ravennainteractive.com" %></p></div>
+<%= render :partial => 'shared/about_menu' %>
+
+
+<p id="clear"></p>
+      
+</div>
+
+<%= render :partial => 'shared/interior_footer' %>
+

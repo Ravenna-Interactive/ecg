@@ -1,29 +1,28 @@
+<%= render :partial => 'shared/interior_hero' %>
 <div id="interior_wrapper">
     <div id="interior_header_absolute">
-        <p id="int_header">Visitors</p>
+        <h6 id="int_header">New Brand</h6>
     </div>
     
-    <div id="cb_header_bg"><p></p></div>
+    <div id="interior_sub_head"><h5 id="sub_green_head"></h5></div>
+<div id="interior_pad">
 
 <h1>New brand</h1>
 
-<% form_for @brand, :html => {:multipart => true } do |f| %>
+<% form_for(@brand) do |f| %>
   <%= f.error_messages %>
 
   <p>
     <%= f.label :name %><br />
     <%= f.text_field :name %>
   </p>
-  <p><%= f.label :photo %><br>
-      <%= f.file_field :photo %>
-      </p>
+
       
   <p>
     <%= f.submit 'Create' %>
   </p>
 <% end %>
-
-<%= link_to 'Back', brands_path %>
-
-
-<div id="interior_footer"><p>&copy; EMERALD CITY GUITARS | <%= link_to 'Privacy Policy', privacy_path %> | Site by <%= link_to "Ravenna Interactive", "http://ravennainteractive.com" %></p></div>
+    <p><%= link_to 'Back', brands_path %></p>
+</div>
+</div>
+<%= render :partial => 'shared/interior_footer' %>

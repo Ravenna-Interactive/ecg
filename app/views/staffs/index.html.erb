@@ -1,0 +1,30 @@
+<div id="interior_wrapper">
+    <div id="interior_header_absolute">
+        <h6 id="int_header">Staff</h6>
+    </div>
+    
+    <div id="interior_sub_head"></div>
+
+<div id="product_listing_container">
+   <% @staffs.each do |staff| %>
+   <table id="staff">
+       <tr>
+           <td><%= image_tag staff.photo.url(:thumb), :align => 'left' %>
+           <span class="staff_name"><%=h staff.name %></span><br>
+           <span class="staff_link"><%= link_to staff.link, staff.link %></span><br>
+           <span class="staff_bio"><%=h staff.bio %></span><td>
+       </tr>    
+       <tr>
+           <td><%= link_to 'Edit', edit_staff_path(staff) %> | 
+               <%= link_to 'Destroy', staff, :confirm => 'Are you sure?', :method => :delete %></td>
+       </tr>
+    </table>
+    <% end %>
+    <%= link_to 'New staff', new_staff_path %>
+</div>
+    
+    <%= render :partial => 'shared/about_menu' %>
+
+</div>
+
+<%= render :partial => 'shared/interior_footer' %>

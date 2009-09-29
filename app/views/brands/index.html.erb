@@ -1,11 +1,12 @@
+<%= render :partial => 'shared/interior_hero' %>
 <div id="interior_wrapper">
     <div id="interior_header_absolute">
-        <p id="int_header">Visitors</p>
+        <h6 id="int_header">Brands</h6>
     </div>
     
-    <div id="cb_header_bg"><p></p></div>
+    <div id="interior_sub_head"><h5 id="sub_green_head"></h5></div>
+<div id="interior_pad">
 
-<h1>Listing brands</h1>
 
 <table>
   <tr>
@@ -17,7 +18,6 @@
   <tr>
    
     <td><%=h brand.name %></td>
-    <td><%= image_tag (brand.photo.url(:thumb))%></td>
     <td><%= link_to 'Show', brand %></td>
     <td><%= link_to 'Edit', edit_brand_path(brand) %></td>
     <td><%= link_to 'Destroy', brand, :confirm => 'Are you sure?', :method => :delete %></td>
@@ -29,5 +29,6 @@
 
 <%= link_to 'New brand', new_brand_path %>
 
-
-<div id="interior_footer"><p>&copy; EMERALD CITY GUITARS | <%= link_to 'Privacy Policy', privacy_path %> | Site by <%= link_to "Ravenna Interactive", "http://ravennainteractive.com" %></p></div>
+</div>
+</div>
+<%= render :partial => 'shared/interior_footer' %>

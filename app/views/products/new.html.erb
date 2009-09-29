@@ -1,6 +1,13 @@
-<h1>New product</h1>
+<%= render :partial => 'shared/interior_hero' %>
+<div id="interior_wrapper">
+    <div id="interior_header_absolute">
+        <h6 id="int_header">New Product</h6>
+    </div>
+    
+    <div id="interior_sub_head"><h5 id="sub_green_head"></h5></div>
+<div id="interior_pad">
 
-<% form_for(@product) do |f| %>
+<% form_for @product, :html => { :multipart => true } do |f| %>
   <%= f.error_messages %>
 
   <p>
@@ -11,6 +18,10 @@
     <%= f.label :description %><br />
     <%= f.text_area :description %>
   </p>
+  <p>
+      <%= f.label :price %><br />
+      $<%= f.text_field :price %>
+    </p>
   <p>
       <label for="category">Category<br/></label>
         <select name="category">
@@ -31,6 +42,26 @@
               <% end %>
           </select>
       </p>
+      
+      <div id="add_photo">
+             <p><%= f.label 'Add Photos:' %><br>
+             <% f.attachment_fields_for :photos, :data, :new_objects => 1 do |attachment_fields| %>
+               	<%= attachment_fields.label :data, 'Photo' %>
+             		    <%= attachment_fields.file_field :data %>
+             	    <%= attachment_fields.label :front, 'Primary Photo' %>
+                  	<%= attachment_fields.check_box :front %> |
+             		<%= attachment_fields.label :_delete, 'Delete Photo' %>
+             		    <%= attachment_fields.check_box :_delete  %>
+         	<%- end -%>
+             </p>
+         </div>
+  <p><%= f.label :audioclip %><br>
+      <%= f.file_field :audioclip %></p>
+  
+  <p>
+      <%= f.label :video %><br />
+      <%= f.text_area :video %>
+ </p>
   <p>
     <%= f.submit 'Create' %>
   </p>
@@ -38,3 +69,6 @@
 
 
 <%= link_to 'Back', products_path %>
+</div>
+</div>
+<%= render :partial => 'shared/interior_footer' %>

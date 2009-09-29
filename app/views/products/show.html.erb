@@ -1,21 +1,28 @@
-<p>
-  <b>Title:</b>
-  <%=h @product.title %>
-</p>
+<%= render :partial => 'shared/interior_hero' %>
+<div id="interior_wrapper">
+    <div id="interior_header_absolute">
+        <h6 id="int_header"><%= @product.category.name %></h6>
+    </div>
+    
+    <div id="interior_sub_head"><h5 id="sub_green_head"><%= @product.brand.name %></h5></div>
+    
+    <div id="cb_header_bg"></div>
+<div id="interior_pad">
+    
+    <div id="one_product">
+        <p id="product_main_image"><%= image_tag(@product.front_photo.data.url(:catalog))  unless @product.front_photo.nil?%><p>
+        <p id="product_main_text"><b><%= @product.brand.name %> <%=h @product.title %></b> - $<%= @product.price %><br>
+        <%= @product.description %></p>
+        <p id="clear"></p>
+<% for photo in @product.photos %>
+ <p><%= image_tag photo.data.url(:tiny), :alt => ""  %></p>
+<% end %>
+        
+        <p>Audio Clip: <%= link_to "Listen", @product.audioclip.url %></p>
+        
+        <p><%= @product.video unless @product.video.nil? %></p>
+        </div>
 
-<p>
-  <b>Description:</b>
-  <%=h @product.description %>
-</p>
-
-<p>
-  <b>Category:</b>
-  <%=h @product.category.name %>
-</p>
-<p>
-  <b>Brand:</b>
-  <%=h @product.brand.name %>
-</p>
-
-<%= link_to 'Edit', edit_product_path(@product) %> |
-<%= link_to 'Back', products_path %>
+</div>
+</div>
+<%= render :partial => 'shared/interior_footer' %>

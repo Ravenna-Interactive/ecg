@@ -1,4 +1,6 @@
 class CategoriesController < ApplicationController
+  
+  before_filter :login_required, :only => [ :index, :edit ]
   before_filter :find_categories
   # GET /categories
   # GET /categories.xml
@@ -9,14 +11,13 @@ class CategoriesController < ApplicationController
       format.html # index.html.erb
       format.xml  { render :xml => @categories }
     end
-  end
+  #end
 
   # GET /categories/1
   # GET /categories/1.xml
   def show
     @category = Category.find(params[:id])
     @brands = @category.brands
-    
 
     respond_to do |format|
       format.html do |wants|
@@ -30,18 +31,18 @@ class CategoriesController < ApplicationController
 
   # GET /categories/new
   # GET /categories/new.xml
-  def new
-    @category = Category.new
+  #def new
+  #  @category = Category.new
 
-    respond_to do |format|
-      format.html # new.html.erb
-      format.xml  { render :xml => @category }
-    end
-  end
+  #  respond_to do |format|
+  #    format.html # new.html.erb
+  #    format.xml  { render :xml => @category }
+  #  end
+  #end
 
   # GET /categories/1/edit
   def edit
-    @category = Category.find(params[:id])
+   @category = Category.find(params[:id])
   end
 
   # POST /categories
@@ -63,8 +64,8 @@ class CategoriesController < ApplicationController
 
   # PUT /categories/1
   # PUT /categories/1.xml
-  def update
-    @category = Category.find(params[:id])
+ def update
+   @category = Category.find(params[:id])
 
     respond_to do |format|
       if @category.update_attributes(params[:category])
@@ -80,13 +81,13 @@ class CategoriesController < ApplicationController
 
   # DELETE /categories/1
   # DELETE /categories/1.xml
-  def destroy
-    @category = Category.find(params[:id])
-    @category.destroy
+  #def destroy
+  #  @category = Category.find(params[:id])
+  #  @category.destroy
 
-    respond_to do |format|
-      format.html { redirect_to(categories_url) }
-      format.xml  { head :ok }
-    end
+  #  respond_to do |format|
+  #    format.html { redirect_to(categories_url) }
+  #    format.xml  { head :ok }
+  #  end
   end
 end

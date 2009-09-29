@@ -6,17 +6,27 @@ class StaticController < ApplicationController
     @categories = Category.all
     
   end
-  def links
-    
+  def history
+    @page = Page.find_by_name('history')
+  end
+  
+  def shop_info
+    @page = Page.find_by_name('shop_info')
   end
   
   def about
-    
+    @page = Page.find_by_name('about')
   end
   
   def find_banner
     @banner = Banner.find(:first)
     render :layout => false
+  end
+  
+  def admin
+    @pages = Page.all
+    @banners = Banner.all
+    @staffs = Staff.all
   end
   
 end

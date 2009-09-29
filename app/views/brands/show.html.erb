@@ -1,7 +1,49 @@
+<%= render :partial => 'shared/interior_hero' %>
+<div id="interior_wrapper">
+    
+    <div id="interior_header_absolute">
+        <h6 id="int_header"><%= @category.name %></h6>
+    </div>
+    
+    <div id="interior_sub_head"><h5 id="sub_green_head"><%= @brand.name %></h5></div>
+    
+    <div id="product_listing_container">
+        <table id="product_listing" cellspacing="0" cellpadding="0">
+              <% @products.in_groups_of(3).each do |products| %>
+                <tr valign="top" class="<%= cycle("blue","white")%>">
+                <% products.each do |product| %>
+                  <td>
+                      <% if product.is_a?(Product)%>
+                    <!-- Begin Styling for the product listing-->
+                      <table class="product" cellspacing="0" cellpadding="0">
+                        <tr><td class="product_image">
+                            <%= link_to image_tag(product.front_photo.data.url(:catalog)), product unless product.front_photo.nil? %></td><tr>
+                         <tr><td class="product_info">
+                             <h3><%= link_to product.title, product %></h3><br>
+                          <%=h truncate(product.description, 100, "...") %><br><br> 
+                          <h3><%= product.price %></h3></td></tr>
+                      </table>
+                    <!-- End Product listing styling-->
+                       
+                      <% end %>
+                   </td>  
+                <% end %>
+                </tr>
+              <% end %>
+        </table>
+    </div>
+    
+   
+   <div id="brands_nav_container">
+        <%= render :partial => 'shared/brand_list', :object => @category %>
+       <div id="brands_listing_bottom"></div>
+   </div>
+    
+    
 
-<%= render :partial => 'shared/brand_list', :object => @category %>
 
-<% for product in @products %>
-       <p><%= product.title %> | <%= product.category.name %> | <%= product.brand.name %></p>
-<% end %>
+<p id="clear"></p>
+</div>
+
+<%= render :partial => 'shared/interior_footer' %>
 

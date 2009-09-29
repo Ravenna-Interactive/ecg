@@ -1,4 +1,11 @@
-<h1>New visitor</h1>
+<%= render :partial => 'shared/interior_hero' %>
+<div id="interior_wrapper">
+    <div id="interior_header_absolute">
+        <h6 id="int_header">New Guest</h6>
+    </div>
+    
+    <div id="interior_sub_head"></div>
+<div id="interior_pad">
 
 <% form_for @visitor, :html => { :multipart => true } do |f| %>
   <%= f.error_messages %>
@@ -18,3 +25,6 @@
 <% end %>
 
 <%= link_to 'Back', visitors_path %>
+</div>
+</div>
+<%= render :partial => 'shared/interior_footer' %>
