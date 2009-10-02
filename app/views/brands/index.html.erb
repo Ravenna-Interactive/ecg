@@ -8,7 +8,7 @@
 <div id="interior_pad">
 
 
-<table>
+<table cellspacing="0" cellpadding="0">
   <tr>
     
     <th>Name</th>
@@ -18,9 +18,7 @@
   <tr>
    
     <td><%=h brand.name %></td>
-    <td><%= link_to 'Show', brand %></td>
-    <td><%= link_to 'Edit', edit_brand_path(brand) %></td>
-    <td><%= link_to 'Destroy', brand, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= link_to 'Show', brand %> | <%= link_to 'Edit', edit_brand_path(brand) %> | <%= link_to 'Destroy', brand, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>
