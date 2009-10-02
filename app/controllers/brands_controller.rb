@@ -49,7 +49,7 @@ class BrandsController < ApplicationController
     respond_to do |format|
       if @brand.save
         flash[:notice] = 'Brand was successfully created.'
-        format.html { redirect_to(index) }
+        format.html { redirect_to(brands_url) }
         format.xml  { render :xml => @brand, :status => :created, :location => @brand }
       else
         format.html { render :action => "new" }
@@ -66,7 +66,7 @@ class BrandsController < ApplicationController
     respond_to do |format|
       if @brand.update_attributes(params[:brand])
         flash[:notice] = 'Brand was successfully updated.'
-        format.html { redirect_to(index) }
+        format.html { redirect_to(brands_url) }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
