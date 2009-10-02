@@ -5,7 +5,7 @@
         <h6 id="int_header"><%= @category.name %></h6>
     </div>
     
-    <div id="interior_sub_head"><h5 id="sub_green_head"><%= @brand.name %></h5></div>
+    <div id="interior_sub_head"><h5 id="sub_green_head"><%= @brand.name %></h5> <%= will_paginate @products %></div>
     
     <div id="product_listing_container">
         <table id="product_listing" cellspacing="0" cellpadding="0">

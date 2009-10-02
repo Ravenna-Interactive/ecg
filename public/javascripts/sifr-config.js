@@ -13,7 +13,7 @@ the copyright statement in `sifr.js` is kept intact.
 // Try using the font name as the variable name, makes it easy to remember which
 // object you're using. As an example in this file, we'll use Futura.
 var rosewood = { 
-	src: '../flash/rosewood.swf' };
+	src: '/flash/rosewood.swf' };
 
 // Now you can set some configuration settings.
 // See also <http://wiki.novemberborn.net/sifr3/JavaScript+Configuration>.

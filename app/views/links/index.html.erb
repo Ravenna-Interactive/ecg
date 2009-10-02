@@ -1,0 +1,35 @@
+<%= render :partial => 'shared/interior_hero' %>
+<div id="interior_wrapper">
+    <div id="interior_header_absolute">
+        <h6 id="int_header">Links and Friends</h6>
+    </div>
+    
+    <div id="interior_sub_head"><h5 id="sub_green_head"></h5></div>
+    <div id="interior_pad">
+        
+    <p id=""><%= @page.body %></p>
+
+<table id="links_table">
+
+
+<% @links.each do |link| %>
+  <tr>
+    <td><%= image_tag (link.photo.url(:original), :align => 'left') unless link.photo.url.nil? %></td>
+    <td><span class="staff_name"><%=h link.name %></span><br>
+        <span class="staff_bio"><%=h link.description %></td>
+<% if logged_in? %> 
+   <td><%= link_to 'Edit', edit_link_path(link) %> | <%= link_to 'Destroy', link, :confirm => 'Are you sure?', :method => :delete %></td>
+<% end %>
+    </td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+<% if logged_in? %> 
+    <%= link_to 'New link', new_link_path %>
+<% end %>
+</div>
+</div>
+
+   <%= render :partial => 'shared/interior_footer' %>

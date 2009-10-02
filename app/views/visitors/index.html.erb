@@ -9,6 +9,7 @@
 <div id="visitor_listing"
 <% @visitors.each do |visitor| %>
 <div id="visitor">
+   
     <p>
        
        <%= link_to(image_tag(visitor.photo.url(:visitor)), visitor.photo.url(:original), :class => "thickbox") %>

@@ -2,6 +2,7 @@ class CategoriesController < ApplicationController
   
   before_filter :login_required, :only => [ :index, :edit ]
   before_filter :find_categories
+
   # GET /categories
   # GET /categories.xml
   def index
@@ -16,7 +17,7 @@ class CategoriesController < ApplicationController
   # GET /categories/1
   # GET /categories/1.xml
   def show
-      @category = Category.find(params[:id])
+      @category = Category.find_by_url_name(params[:id])
       @brands = @category.brands
       @categories = Category.find(:all)
 

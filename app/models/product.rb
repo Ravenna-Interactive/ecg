@@ -3,6 +3,7 @@ class Product < ActiveRecord::Base
   belongs_to :category
   belongs_to :brand
   
+  
   acts_as_friendly_param :title
   
   has_many :photos
@@ -19,6 +20,18 @@ class Product < ActiveRecord::Base
       validates_attachment_content_type :audioclip, :content_type => [ 'application/mp3', 'application/x-mp3', 'audio/mpeg', 'audio/mp3' ]
       validates_attachment_size :audioclip, :less_than => 20.megabytes
   
-  #Validations
+  def self.per_page
+      6
+  end
+  
+  def self.new_spotlight
+    Spotlight.find_first_by_name("new").product
+      (Spotlight.find_first_by_name("new").product = a_product).save
+  end
+
+  def self.vintage_spotlight
+    Spotlight.find_first_by_name("vintage").product
+      (Spotlight.find_first_by_name("vintage").product = a_product).save
+  end
   
 end

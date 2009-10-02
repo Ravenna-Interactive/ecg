@@ -1,7 +1,7 @@
 
 
 set :user, 'emeraldcityguitars'
-set :domain, 'emeraldcityguitars.com'
+set :domain, 'staging.emeraldcityguitars.com'
 
 set :deploy_to, "/home/#{user}/#{domain}" 
 set :use_sudo, false

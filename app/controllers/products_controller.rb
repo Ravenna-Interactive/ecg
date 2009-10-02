@@ -27,7 +27,7 @@ class ProductsController < ApplicationController
   # GET /products/new.xml
   def new
     @product = Product.new
-    @cat = Category.find(:all)
+    @category = Category.find(:all)
     @brand = Brand.find(:all)
     
   end

@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090928235125) do
+ActiveRecord::Schema.define(:version => 20091002180602) do
 
   create_table "banners", :force => true do |t|
     t.string   "name"
@@ -36,6 +36,26 @@ ActiveRecord::Schema.define(:version => 20090928235125) do
 
   create_table "categories", :force => true do |t|
     t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "url_name"
+  end
+
+  create_table "links", :force => true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "photo_file_name"
+    t.string   "photo_content_type"
+    t.integer  "photo_file_size"
+    t.datetime "photo_updated_at"
+  end
+
+  create_table "pages", :force => true do |t|
+    t.string   "title"
+    t.string   "name"
+    t.text     "body"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -70,6 +90,13 @@ ActiveRecord::Schema.define(:version => 20090928235125) do
     t.string   "audioclip_content_type"
     t.integer  "audioclip_file_size"
     t.datetime "audioclip_updated_at"
+  end
+
+  create_table "spotlights", :force => true do |t|
+    t.string   "name"
+    t.integer  "product_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "staffs", :force => true do |t|

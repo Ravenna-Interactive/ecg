@@ -1,6 +1,7 @@
 class BrandsController < ApplicationController
    before_filter :find_categories
    before_filter :login_required, :only => [ :index, :new, :edit ]
+
   # GET /brands
   # GET /brands.xml
   def index
@@ -15,7 +16,7 @@ class BrandsController < ApplicationController
   # GET /brands/1
   # GET /brands/1.xml
   def show
-      @category = Category.find(params[:category_id])
+      @category = Category.find_by_url_name(params[:category_id])
       @brand = Brand.find(params[:id])
       @products = Product.paginate(:conditions => {:brand_id => @brand, :category_id => @category}, :page => params[:page] )
       respond_to do |format|
@@ -85,4 +86,5 @@ class BrandsController < ApplicationController
       #format.xml  { head :ok }
   #  end
   # end
+ 
 end

@@ -1,0 +1,33 @@
+<%= render :partial => 'shared/interior_hero' %>
+<div id="interior_wrapper">
+    <div id="interior_header_absolute">
+        <h6 id="int_header">Contact Us</h6>
+    </div>
+    
+    <div id="interior_sub_head"><h5 id="sub_green_head"></h5></div>
+    <div id="interior_pad">
+
+<% form_for @link, :html => { :multipart => true } do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :description %><br />
+    <%= f.text_area :description %>
+  </p>
+  <p>
+      <%= f.label :photo %><br />
+      <%= f.file_field :photo %>
+    </p>
+  <p>
+    <%= f.submit 'Create' %>
+  </p>
+<% end %>
+
+</div>
+</div>
+
+   <%= render :partial => 'shared/interior_footer' %>

@@ -1,8 +1,10 @@
 ActionController::Routing::Routes.draw do |map|
+  map.resources :links
+
   map.logout '/logout', :controller => 'sessions', :action => 'destroy'
   map.login '/login', :controller => 'sessions', :action => 'new'
-  map.register '/register', :controller => 'users', :action => 'create'
-  map.signup '/signup', :controller => 'users', :action => 'new'
+#  map.register '/register', :controller => 'users', :action => 'create'
+#map.signup '/signup', :controller => 'users', :action => 'new'
   map.resources :users
 
   map.resource :session
@@ -35,13 +37,13 @@ map.resources :categories
   map.contact 'contact', :controller => 'contact', :action => 'index'
   map.wish_list 'wish_list', :controller => 'wish_list', :action => 'index'
   
-  map.with_options :controller => 'products', :action => 'products' do |product|
-    product.acoustics '/acoustics',     :id => 'acoustics'
-     product.electrics '/electrics',     :id => 'electrics'
-     product.bass      '/bass',          :id => 'bass'
-     product.amps      '/amps',          :id => 'amps'
-     product.effects   '/effects-other', :id => 'effects-other'
-    end
+  #map.with_options :controller => 'products', :action => 'products' do |product|
+  #  product.acoustics '/acoustics',     :id => 'acoustics'
+  #   product.electrics '/electrics',     :id => 'electrics'
+  #   product.bass      '/bass',          :id => 'bass'
+  #   product.amps      '/amps',          :id => 'amps'
+  #   product.effects   '/effects-other', :id => 'effects-other'
+  #  end
   
   map.with_options :controller => 'static' do |static|
     static.home 'home', :action => 'home'
@@ -49,9 +51,11 @@ map.resources :categories
     static.history 'history', :action => 'history'
     static.shop_info 'shop_info', :action => 'shop_info'
     static.admin 'admin', :action => 'admin'
-
   end
-  
+ 
+ #This would be for hard links but the url_name creates this for us. 
+  #map.acoustic_categories '/categories/acoustic-guitars', :controller => 'categories', :action => 'show', :id => 'acoustic-guitars'
+ 
   
   # The priority is based upon order of creation: first created -> highest priority.
 

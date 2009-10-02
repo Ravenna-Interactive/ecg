@@ -49,10 +49,15 @@
 	padding-left:330px;
 	padding-top:3px;
 }
+#interior_sub_head .pagination{
+	float:right;
+	padding-right:20px;
+	padding-top:10px;
+	font-size:12px;
+	font-weight:bold;
+}
 #interior_sub_head p{
-
 	color:#fff;
-
 	font-size:18px;
 }
 
@@ -90,7 +95,6 @@
 	width:770px;
 	margin-right:4px;
 	height:auto;
-	padding-top:20px;
 }
 #product_listing{
 	width:770px;
@@ -103,6 +107,7 @@
 	width:770px;
 	background-color:#fff;
 }
+#spacer{padding-top:20px;}
 
 .product{
 	width:180px;
@@ -261,4 +266,16 @@
 }
 #admin_list li{
 	padding:3px 0 3px 0;
+}
+										/* Links Style */
+#links_table td img{
+	padding:2px;
+	border:1px solid #999;
+	margin-right:10px;
+}
+#links_table td{
+	border:none;
+}
+#links_table tr{
+	border-bottom:1px solid #999;
 }
