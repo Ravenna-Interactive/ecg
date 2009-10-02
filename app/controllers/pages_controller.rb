@@ -25,14 +25,14 @@ class PagesController < ApplicationController
 
   # GET /pages/new
   # GET /pages/new.xml
-  #def new
-  #  @page = Page.new
+  def new
+    @page = Page.new
 
-   # respond_to do |format|
-   #   format.html # new.html.erb
-   #   format.xml  { render :xml => @page }
-  #  end
-  #end
+   respond_to do |format|
+     format.html # new.html.erb
+     format.xml  { render :xml => @page }
+  end
+  end
 
   # GET /pages/1/edit
   def edit
@@ -41,20 +41,20 @@ class PagesController < ApplicationController
 
   # POST /pages
   # POST /pages.xml
- # def create
-  #  @page = Page.new(params[:page])
+ def create
+  @page = Page.new(params[:page])
 
-   # respond_to do |format|
-    #  if @page.save
-    #    flash[:notice] = 'Page was successfully created.'
-    #    format.html { redirect_to(index) }
-    #    format.xml  { render :xml => @page, :status => :created, :location => @page }
-    #  else
-     #   format.html { render :action => "new" }
-    #    format.xml  { render :xml => @page.errors, :status => :unprocessable_entity }
-    #  end
-   # end
- # end
+ respond_to do |format|
+      if @page.save
+        flash[:notice] = 'Page was successfully created.'
+        format.html { redirect_to(index) }
+        format.xml  { render :xml => @page, :status => :created, :location => @page }
+      else
+       format.html { render :action => "new" }
+        format.xml  { render :xml => @page.errors, :status => :unprocessable_entity }
+      end
+    end
+  end
 
   # PUT /pages/1
   # PUT /pages/1.xml
