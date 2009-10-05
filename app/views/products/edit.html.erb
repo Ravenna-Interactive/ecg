@@ -24,12 +24,12 @@
     </p>
     <p>
          <%= f.label :category, "Category" %>
-         <%= f.select :category, Category.find(:all, :order => 'name').collect { |c| [c.name, c.id] }, :include_blank => true %>
+         <%= f.select :category_id, Category.find(:all, :order => 'name').collect { |c| [c.name, c.id] }, :include_blank => true %>
      </p>
 
      <p>
          <%= f.label :brand %>
-         <%= f.select :brand, Brand.find(:all, :order => 'name').collect { |b| [b.name, b.id] }, :include_blank => true %>
+         <%= f.select :brand_id, Brand.find(:all, :order => 'name').collect { |b| [b.name, b.id] }, :include_blank => true %>
      </p>
     
     <div id="add_photo">

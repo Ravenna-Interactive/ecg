@@ -35,16 +35,22 @@
       
       <div id="add_photo">
              <p><%= f.label 'Add Photos:' %><br>
-             <% f.attachment_fields_for :photos, :data, :new_objects => 1 do |attachment_fields| %>
-               	<%= attachment_fields.label :data, 'Photo' %>
-             		    <%= attachment_fields.file_field :data %>
-             	    <%= attachment_fields.label :front, 'Primary Photo' %>
-                  	<%= attachment_fields.check_box :front %> |
-             		<%= attachment_fields.label :_delete, 'Delete Photo' %>
-             		    <%= attachment_fields.check_box :_delete  %>
-         	<%- end -%>
-             </p>
-         </div>
+             <% f.attachment_fields_for :photos, :data, :new_objects => 1, :js_lib => :jquery do |attachment_fields| %>
+              	<%= attachment_fields.label :data, 'Photo' %>
+            		<%= attachment_fields.file_field :data %>
+            		<%= attachment_fields.label :front, 'Primary Photo' %>
+            		<%= attachment_fields.check_box :front %> |
+            		<%= attachment_fields.label :_delete, 'Delete Photo' %>
+            		<%= attachment_fields.check_box :_delete  %>
+            	<%- end -%>
+                </p>
+            </div>
+              
+        
+         
+         
+         
+         
   <p><%= f.label :audioclip %><br>
       <%= f.file_field :audioclip %></p>
   

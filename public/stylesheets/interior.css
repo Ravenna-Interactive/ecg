@@ -168,29 +168,26 @@
 	border:1px solid #666;
 	padding:2px;
 }
+#product_show_thumb tr td{
+padding-right:5px;
+border-bottom:none;
+}
 
 										/* Product new/edit styles */
-#add_product_photos_attributes_fields{
-	margin-top:8px;
-	border:1px solid #999;
-	padding:2px;
-	background:#ccc;
-}
-.product_photos_attributes_fields{
-	padding-bottom:10px;
-}
-										
+
+									
 										
 										/* Staff Styles */
 #staff{
 	border-bottom:1px dotted #999;
 	padding:10px 15px 15px 15px;
 	margin-top:20px;
+		width:670px;
 
 }
 										
 #staff tr td{
-	width:670px;
+
 
 }
 #staff tr td img{padding:2px; border:1px solid #777; margin:0 5px 5px 0;}
