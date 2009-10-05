@@ -23,25 +23,13 @@
       $<%= f.text_field :price %>
     </p>
     <p>
-          <label for="category">Category<br/></label>
-            <select name="category">
-                <% @category.each do |category| %>
-                    <option value="<%= category.id %>">
-                <%= category.name  %><!-- #will display all category names -->
-                    </option>
-              <% end %>
-            </select>
-        </p>
-      <p>
-          <label for="brand">Brand:<br/></label>
-              <select name="brand">
-                  <% @brand.each do |brand| %> <!-- #do loop,will go on till end of records in table-categories -->
-                  <option value="<%= brand.id %>">
-                  <%= brand.name  %><!-- #will display all brand names -->
-                  </option>
-                  <% end %>
-              </select>
-          </p>
+        <%= f.label :category, "Category" %>
+        <%= f.select :category, Category.find(:all, :order => 'name').collect { |c| [c.name, c.id] }, :include_blank => true %>
+    </p>
+    <p>
+        <label for="brand">Brand:<br/></label>
+        <%= f.select :brand, Brand.find(:all, :order => 'name').collect { |b| [b.name, b.id] }, :include_blank => true %>
+    </p>
     
     <div id="add_photo">
          <p><%= f.label 'Add/Remove Photos:' %><br>

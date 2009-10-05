@@ -27,8 +27,6 @@ class ProductsController < ApplicationController
   # GET /products/new.xml
   def new
     @product = Product.new
-    @category = Category.find(:all)
-    @brand = Brand.find(:all)
    # @spotlight = Spotlight.find(:all)
     
   end
@@ -36,8 +34,6 @@ class ProductsController < ApplicationController
   # GET /products/1/edit
   def edit
     @product = Product.find(params[:id])
-    @category = Category.find(:all)
-    @brand = Brand.find(:all)
     @product.photos.build if @product.photos.first.nil?
   #  @spotlight = Spotlight.find(:all)
   end
