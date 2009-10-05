@@ -16,9 +16,11 @@ class Product < ActiveRecord::Base
       :path => ":rails_root/public/system/product_audio/:id/:basename_:style.:extension"
 
    
-      validates_attachment_presence :audioclip
-      validates_attachment_content_type :audioclip, :content_type => [ 'application/mp3', 'application/x-mp3', 'audio/mpeg', 'audio/mp3' ]
-      validates_attachment_size :audioclip, :less_than => 20.megabytes
+      #validates_attachment_presence :audioclip
+      #validates_attachment_content_type :audioclip, :content_type => [ 'application/mp3', 'application/x-mp3', 'audio/mpeg', 'audio/mp3' ]
+      #validates_attachment_size :audioclip, :less_than => 20.megabytes
+
+
   
   def self.per_page
       6

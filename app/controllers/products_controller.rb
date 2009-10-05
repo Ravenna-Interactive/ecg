@@ -27,8 +27,6 @@ class ProductsController < ApplicationController
   # GET /products/new.xml
   def new
     @product = Product.new
-    @category = Category.find(:all)
-    @brand = Brand.find(:all)
    # @spotlight = Spotlight.find(:all)
     
   end
@@ -36,8 +34,6 @@ class ProductsController < ApplicationController
   # GET /products/1/edit
   def edit
     @product = Product.find(params[:id])
-    @category = Category.find(:all)
-    @brand = Brand.find(:all)
     @product.photos.build if @product.photos.first.nil?
   #  @spotlight = Spotlight.find(:all)
   end
@@ -46,8 +42,8 @@ class ProductsController < ApplicationController
   # POST /products.xml
   def create
     @product = Product.new(params[:product])
-    @product.category_id = (params[:category])
-    @product.brand_id = (params[:brand]) 
+   # @product.category_id = (params[:category])
+   # @product.brand_id = (params[:brand]) 
     respond_to do |format|
       if @product.save
         flash[:notice] = 'Product was successfully created.'
@@ -70,8 +66,8 @@ class ProductsController < ApplicationController
         end
     
     @product = Product.find(params[:id])
-    @product.category_id = (params[:category])
-    @product.brand_id = (params[:brand])
+   # @product.category_id = (params[:category])
+   # @product.brand_id = (params[:brand])
     respond_to do |format|
       if @product.update_attributes(params[:product])
         flash[:notice] = 'Product was successfully updated.'

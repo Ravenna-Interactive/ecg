@@ -20,30 +20,18 @@
   </p>
   
   <p>
-      <%= f.label :price %><br />
-      $<%= f.text_field :price %>
+      <%= f.label :price %> $<%= f.text_field :price %>
     </p>
    
-  <p>
-      
-        <select name="category">
-            <% @category.each do |category| %> <!-- #do loop,will go on till end of records in table-categories -->
-                <option value="<%= category.id %>">
-            <%= category.name  %><!-- #will display all category names -->
-                </option>
-          <% end %>
-        </select>
+    <p>
+    <%= f.label :category %>
+    <%= f.select :category_id, Category.find(:all, :order => 'name').collect { |c| [c.name, c.id] }, :include_blank => true %>
     </p>
-  <p>
-      <label for="brand">Brand:<br/></label>
-          <select name="brand">
-              <% @brand.each do |brand| %> <!-- #do loop,will go on till end of records in table-categories -->
-              <option value="<%= brand.id %>">
-              <%= brand.name  %><!-- #will display all brand names -->
-              </option>
-              <% end %>
-          </select>
-      </p>
+    
+    <p>
+    <%= f.label :brand %>
+    <%= f.select :brand_id, Brand.find(:all, :order => 'name').collect { |b| [b.name, b.id] }, :include_blank => true %>
+    </p>
       
       <div id="add_photo">
              <p><%= f.label 'Add Photos:' %><br>

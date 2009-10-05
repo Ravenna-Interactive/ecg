@@ -10,6 +10,17 @@
 	color:#333;
 }
 
+#errorExplanation{
+	color:#cc0000;
+}
+#errorExplanation ul{
+	list-style-position:inside;
+}
+#errorExplanation ul li{
+	padding-left:20px;
+	
+}
+
 #interior_pad{
 	padding:35px 50px 0 50px;
 }
@@ -158,6 +169,18 @@
 	padding:2px;
 }
 
+										/* Product new/edit styles */
+#add_product_photos_attributes_fields{
+	margin-top:8px;
+	border:1px solid #999;
+	padding:2px;
+	background:#ccc;
+}
+.product_photos_attributes_fields{
+	padding-bottom:10px;
+}
+										
+										
 										/* Staff Styles */
 #staff{
 	border-bottom:1px dotted #999;
