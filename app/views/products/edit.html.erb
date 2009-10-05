@@ -25,7 +25,7 @@
     <p>
           <label for="category">Category<br/></label>
             <select name="category">
-                <% @cat.each do |category| %> <!-- #do loop,will go on till end of records in table-categories -->
+                <% @category.each do |category| %>
                     <option value="<%= category.id %>">
                 <%= category.name  %><!-- #will display all category names -->
                     </option>

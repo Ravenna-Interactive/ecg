@@ -37,7 +37,7 @@ class StaffsController < ApplicationController
     respond_to do |format|
       if @staff.save
         flash[:notice] = 'Staff was successfully created.'
-        format.html { redirect_to(index) }
+        format.html { redirect_to(staffs_url) }
         format.xml  { render :xml => @staff, :status => :created, :location => @staff }
       else
         format.html { render :action => "new" }
@@ -54,7 +54,7 @@ class StaffsController < ApplicationController
     respond_to do |format|
       if @staff.update_attributes(params[:staff])
         flash[:notice] = 'Staff was successfully updated.'
-        format.html { redirect_to(index) }
+        format.html { redirect_to(staffs_url) }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }

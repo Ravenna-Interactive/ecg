@@ -29,15 +29,17 @@ class ProductsController < ApplicationController
     @product = Product.new
     @category = Category.find(:all)
     @brand = Brand.find(:all)
+   # @spotlight = Spotlight.find(:all)
     
   end
 
   # GET /products/1/edit
   def edit
     @product = Product.find(params[:id])
-    @cat = Category.find(:all)
+    @category = Category.find(:all)
     @brand = Brand.find(:all)
     @product.photos.build if @product.photos.first.nil?
+  #  @spotlight = Spotlight.find(:all)
   end
 
   # POST /products
@@ -49,7 +51,7 @@ class ProductsController < ApplicationController
     respond_to do |format|
       if @product.save
         flash[:notice] = 'Product was successfully created.'
-        format.html { redirect_to(@product) }
+        format.html { redirect_to(products_url) }
         format.xml  { render :xml => @product, :status => :created, :location => @product }
       else
         format.html { render :action => "new" }
@@ -73,7 +75,7 @@ class ProductsController < ApplicationController
     respond_to do |format|
       if @product.update_attributes(params[:product])
         flash[:notice] = 'Product was successfully updated.'
-        format.html { redirect_to(@product) }
+        format.html { redirect_to(products_url) }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }

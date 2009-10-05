@@ -162,6 +162,7 @@
 #staff{
 	border-bottom:1px dotted #999;
 	padding:10px 15px 15px 15px;
+	margin-top:20px;
 
 }
 										
@@ -265,7 +266,11 @@
 	list-style-type:none;
 }
 #admin_list li{
-	padding:3px 0 3px 0;
+	padding:3px 0 3px 3px;
+	margin:3px 0 3px 0;
+	border:1px solid #999;
+	background:#ccc;
+	width:200px;
 }
 										/* Links Style */
 #links_table td img{

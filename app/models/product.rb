@@ -2,7 +2,7 @@ class Product < ActiveRecord::Base
   #Relationships
   belongs_to :category
   belongs_to :brand
-  
+  has_one :spotlight
   
   acts_as_friendly_param :title
   
@@ -24,14 +24,15 @@ class Product < ActiveRecord::Base
       6
   end
   
-  def self.new_spotlight
-    Spotlight.find_first_by_name("new").product
-      (Spotlight.find_first_by_name("new").product = a_product).save
+  def self.new_spotlight=(a_product)
+    spotlight = Spotlight.find_first_by_name("new")
+    spotlight.product = a_product
+    spotlight.save
   end
-
-  def self.vintage_spotlight
-    Spotlight.find_first_by_name("vintage").product
-      (Spotlight.find_first_by_name("vintage").product = a_product).save
+  def self.vintage_spotlight=(a_product)
+    spotlight = Spotlight.find_first_by_name("vintage")
+    spotlight.product = a_product
+    spotlight.save
   end
   
 end

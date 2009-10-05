@@ -34,13 +34,9 @@
             </div>
         </div>
     </div><!-- Image 258px x 198px -->
-<script type="text/javascript">
-    $(document).ready(function(){
-        $("#vintage_spotlight").corner("15px");
-    });
-</script>
+
     <div id="vintage_spotlight">
-        <%= image_tag "/images/rounded_test.jpg"%>
+        <%= @new_spotlight unless @new_spotlight.nil? %>
         
     </div>
     <div id="new_spotlight"></div>

@@ -14,8 +14,8 @@
 
 <% @links.each do |link| %>
   <tr>
-    <td><%= image_tag (link.photo.url(:original), :align => 'left') unless link.photo.url.nil? %></td>
-    <td><span class="staff_name"><%=h link.name %></span><br>
+    <td><%= link_to (image_tag (link.photo.url(:original), :align => 'left')), link.link_url unless link.photo.url.nil? %></td>
+    <td><span class="staff_name"><%= link_to link.name, link.link_url %></span><br>
         <span class="staff_bio"><%=h link.description %></td>
 <% if logged_in? %> 
    <td><%= link_to 'Edit', edit_link_path(link) %> | <%= link_to 'Destroy', link, :confirm => 'Are you sure?', :method => :delete %></td>
