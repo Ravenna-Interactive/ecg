@@ -198,7 +198,7 @@ border-bottom:none;
 
 
 }
-#staff tr td img{padding:2px; border:1px solid #777; margin:0 10px 5px 0;}
+#staff tr td img{padding:2px; border:1px solid #777; margin:0 10px 0px 0;}
 
 .staff_name{font-size:12px; font-weight:bold;}
 .staff_link{font-size:12px;}
