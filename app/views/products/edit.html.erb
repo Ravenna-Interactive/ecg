@@ -22,6 +22,12 @@
       <%= f.label :price %><br />
       $<%= f.text_field :price %>
     </p>
+    
+    <p>
+    <%= f.label :spotlights %> 
+    <%= select_tag "spotlight", options_for_select([ "New", "Vintage", "None" ], "None")%>
+          
+    </p>
     <p>
          <%= f.label :category, "Category" %>
          <%= f.select :category_id, Category.find(:all, :order => 'name').collect { |c| [c.name, c.id] }, :include_blank => true %>
@@ -35,7 +41,7 @@
     <div id="add_photo">
          <p><%= f.label 'Add/Remove Photos:' %><br>
          <% f.attachment_fields_for :photos, :data, :new_objects => 0, :js_lib => :jquery do |attachment_fields| %>
-     		<%= image_tag(attachment_fields.object.data(:thumb)) unless attachment_fields.object.data.nil? %>
+     		<%= image_tag(attachment_fields.object.data(:tiny)) unless attachment_fields.object.data.nil? %>
 
      		<%= attachment_fields.label :data, 'Photo' %>
      		<%= attachment_fields.file_field :data %>

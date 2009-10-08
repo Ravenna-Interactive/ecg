@@ -59,6 +59,10 @@
 	margin-left:4px;
 	padding-left:330px;
 	padding-top:3px;
+	color:#fff;
+}
+#interior_sub_head #sub_green_head{
+	width:250px;
 }
 #interior_sub_head .pagination{
 	float:right;
@@ -66,7 +70,11 @@
 	padding-top:10px;
 	font-size:12px;
 	font-weight:bold;
+	color:#fff;
 }
+.pagination a{color:#fff;}
+.pagination a:hover{color:#333;}
+
 #interior_sub_head p{
 	color:#fff;
 	font-size:18px;
@@ -190,7 +198,7 @@ border-bottom:none;
 
 
 }
-#staff tr td img{padding:2px; border:1px solid #777; margin:0 5px 5px 0;}
+#staff tr td img{padding:2px; border:1px solid #777; margin:0 10px 5px 0;}
 
 .staff_name{font-size:12px; font-weight:bold;}
 .staff_link{font-size:12px;}

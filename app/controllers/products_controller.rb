@@ -5,6 +5,9 @@ class ProductsController < ApplicationController
   # GET /products.xml
   def index
     @products = Product.all
+    
+   # @new_spotlight = Product.new_spotlight
+   #  @vintage_spotlight = Product.vintage_spotlight
 
     respond_to do |format|
       format.html # index.html.erb
@@ -27,7 +30,6 @@ class ProductsController < ApplicationController
   # GET /products/new.xml
   def new
     @product = Product.new
-   # @spotlight = Spotlight.find(:all)
     
   end
 
@@ -35,7 +37,6 @@ class ProductsController < ApplicationController
   def edit
     @product = Product.find(params[:id])
     @product.photos.build if @product.photos.first.nil?
-  #  @spotlight = Spotlight.find(:all)
   end
 
   # POST /products
