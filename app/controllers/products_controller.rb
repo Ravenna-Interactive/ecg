@@ -5,9 +5,7 @@ class ProductsController < ApplicationController
   # GET /products.xml
   def index
     @products = Product.all
-    
-   # @new_spotlight = Product.new_spotlight
-   #  @vintage_spotlight = Product.vintage_spotlight
+
 
     respond_to do |format|
       format.html # index.html.erb
@@ -43,19 +41,19 @@ class ProductsController < ApplicationController
   # POST /products.xml
   def create
     @product = Product.new(params[:product])
-   # @product.category_id = (params[:category])
-   # @product.brand_id = (params[:brand]) 
-    respond_to do |format|
-      if @product.save
-        flash[:notice] = 'Product was successfully created.'
-        format.html { redirect_to(products_url) }
-        format.xml  { render :xml => @product, :status => :created, :location => @product }
-      else
-        format.html { render :action => "new" }
-        format.xml  { render :xml => @product.errors, :status => :unprocessable_entity }
+
+   # respond_to do |format|
+       if @product.save
+          unless params[:spotlight] == "None"
+            spotlight = Spotlight.find_by_name(params[:spotlight])  # step 1
+            spotlight.product = @product                            # step 2
+            spotlight.save                                          # step 3
+          end
+          redirect_to product_url(@product)
+        else
+          render :action => :new
       end
     end
-  end
 
   # PUT /products/1
   # PUT /products/1.xml
@@ -67,10 +65,14 @@ class ProductsController < ApplicationController
         end
     
     @product = Product.find(params[:id])
-   # @product.category_id = (params[:category])
-   # @product.brand_id = (params[:brand])
+
     respond_to do |format|
       if @product.update_attributes(params[:product])
+          unless params[:spotlight] == "None"
+            spotlight = Spotlight.find_by_name(params[:spotlight])  # step 1
+            spotlight.product = @product                            # step 2
+            spotlight.save                                          # step 3
+          end
         flash[:notice] = 'Product was successfully updated.'
         format.html { redirect_to(products_url) }
         format.xml  { head :ok }
@@ -92,5 +94,5 @@ class ProductsController < ApplicationController
       format.xml  { head :ok }
     end
   end
-
 end
+

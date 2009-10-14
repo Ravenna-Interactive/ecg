@@ -4,9 +4,8 @@ class StaticController < ApplicationController
   def home
     @visitors = Visitor.find(:all, :order => "RAND()", :limit => 1)
     @categories = Category.all
-    
-   # @new_spotlight = Product.new_spotlight
-   # @vintage_spotlight = Product.vintage_spotlight
+    @new_spotlight = Product.find_new_spotlight
+    @vintage_spotlight = Product.find_vintage_spotlight
     
   end
   def history

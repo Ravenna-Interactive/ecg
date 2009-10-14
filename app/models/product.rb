@@ -27,14 +27,23 @@ class Product < ActiveRecord::Base
   end
   
   def self.new_spotlight=(a_product)
-    spotlight = Spotlight.find_first_by_name("new")
+    spotlight = Spotlight.find_by_name("New")
     spotlight.product = a_product
     spotlight.save
   end
   def self.vintage_spotlight=(a_product)
-    spotlight = Spotlight.find_first_by_name("vintage")
+    spotlight = Spotlight.find_by_name("Vintage")
     spotlight.product = a_product
     spotlight.save
+  end
+  
+  def self.find_new_spotlight
+     spotlight = Spotlight.find_by_name("New")
+     spotlight.product
+  end
+  def self.find_vintage_spotlight
+     spotlight = Spotlight.find_by_name("Vintage")
+     spotlight.product
   end
   
   

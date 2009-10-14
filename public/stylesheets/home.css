@@ -117,11 +117,12 @@ a:hover {color:#999; text-decoration:underline;}
 	margin-right:auto;
 	width:968px;
 	height:325px;
+	position:relative;
 }
 #tell_us_absolute{
 	position:absolute;
 	top:275px;
-	left:785px;
+	left:700px;
 }
 
 													/*  Main Image Styles */
@@ -227,7 +228,26 @@ a:hover {color:#999; text-decoration:underline;}
 	height:265px;
 	width:257px;
 	margin-right:34px;
+	position:relative;
 }
+
+#vintage_spotlight img{
+	padding:40px 0 0 8px;
+}
+
+
+#vintage_spotlight_overlay{
+	position:absolute; 
+	bottom:9px; 
+	right:13px;
+	height:26px;
+	width:123px;
+	padding:10px 0 0 3px;
+	background-image:url(/images/spotlight_overlay.png);
+	background-repeat:no-repeat;
+	color:#fff;
+	font-size:12px; }
+
 #new_spotlight{
 	float:left;
 	background-image:url(/images/new_spotlight_bg.png);
@@ -235,7 +255,19 @@ a:hover {color:#999; text-decoration:underline;}
 	height:265px;
 	width:257px;
 	margin-right:34px;
+	position:relative;
 }
+#new_spotlight_overlay{
+	position:absolute; 
+	bottom:11px; 
+	right:14px;
+	height:26px;
+	width:123px;
+	padding:10px 0 0 3px;
+	background-image:url(/images/spotlight_overlay.png);
+	background-repeat:no-repeat;
+	color:#fff;
+	font-size:12px; } 
 
 #footer{
 	width:916px;
