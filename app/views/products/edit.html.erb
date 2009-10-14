@@ -24,7 +24,7 @@
     </p>
     
     <p>
-    <%= f.label :spotlights %> 
+    <%= f.label "Spotlight" %> 
     <%= select_tag "spotlight", options_for_select([ "New", "Vintage", "None" ], "None")%>
           
     </p>
@@ -38,16 +38,14 @@
          <%= f.select :brand_id, Brand.find(:all, :order => 'name').collect { |b| [b.name, b.id] }, :include_blank => true %>
      </p>
      
-     <% for photo in @product.photos %>
-      <p><%= image_tag(photo.data.url(:tiny)) -%></p>
-     <% end %>
+
      
      
     
     <div id="add_photo">
          <p><%= f.label 'Add/Remove Photos:' %><br>
          <% f.attachment_fields_for :photos, :data, :new_objects => 0, :js_lib => :jquery do |attachment_fields| %>
-     		
+     		<%= image_tag(attachment_fields.object.data(:tiny)) unless attachment_fields.nil?%>
      		<%= attachment_fields.label :data, 'Photo' %>
      		<%= attachment_fields.file_field :data %>
      		<%= attachment_fields.label :front, 'Primary Photo' %>
