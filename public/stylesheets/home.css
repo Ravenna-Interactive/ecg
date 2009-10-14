@@ -239,7 +239,7 @@ a:hover {color:#999; text-decoration:underline;}
 #vintage_spotlight_overlay{
 	position:absolute; 
 	bottom:9px; 
-	right:13px;
+	right:11px;
 	height:26px;
 	width:160px;
 	padding:10px 0 0 3px;
@@ -260,7 +260,7 @@ a:hover {color:#999; text-decoration:underline;}
 #new_spotlight_overlay{
 	position:absolute; 
 	bottom:9px; 
-	right:11px;
+	right:10px;
 	height:26px;
 	width:160px;
 	padding:10px 0 0 3px;
