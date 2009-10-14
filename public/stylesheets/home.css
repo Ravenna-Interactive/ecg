@@ -241,7 +241,7 @@ a:hover {color:#999; text-decoration:underline;}
 	bottom:9px; 
 	right:13px;
 	height:26px;
-	width:126px;
+	width:160px;
 	padding:10px 0 0 3px;
 	background-image:url(/images/spotlight_overlay.png);
 	background-repeat:no-repeat;
@@ -259,8 +259,8 @@ a:hover {color:#999; text-decoration:underline;}
 }
 #new_spotlight_overlay{
 	position:absolute; 
-	bottom:11px; 
-	right:14px;
+	bottom:9px; 
+	right:11px;
 	height:26px;
 	width:160px;
 	padding:10px 0 0 3px;
