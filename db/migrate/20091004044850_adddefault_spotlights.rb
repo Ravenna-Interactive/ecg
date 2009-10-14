@@ -1,13 +1,13 @@
 class AdddefaultSpotlights < ActiveRecord::Migration
   def self.up
-     if !Spotlight.find_by_name('new')
+     if !Spotlight.find_by_name('New')
        Spotlight.create(
-         :name => 'new')
+         :name => 'New')
        end
        
-       if !Spotlight.find_by_name('vintage')
+       if !Spotlight.find_by_name('Vintage')
           Spotlight.create(
-            :name => 'vintage')
+            :name => 'Vintage')
           end
   end
 
