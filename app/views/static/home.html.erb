@@ -38,10 +38,12 @@
     </div><!-- Image 258px x 198px -->
 
     <div id="vintage_spotlight">
-        
+        <div id="vintage_spotlight_overlay"><%= @vintage_spotlight.title unless @vintage_spotlight.blank? %></div>
+           <%= image_tag @vintage_spotlight.front_photo.data.url(:spotlight) unless @vintage_spotlight.blank? %>
         </div>
     <div id="new_spotlight">
-
+            <div id="new_spotlight_overlay"><%= @new_spotlight.title unless @new_spotlight.blank?%></div>
+       <%= image_tag @new_spotlight.front_photo.data.url(:spotlight) unless @new_spotlight.blank? %>
     </div>
     
     <p id="clear">&nbsp;</p>
