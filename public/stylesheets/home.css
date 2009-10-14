@@ -241,7 +241,7 @@ a:hover {color:#999; text-decoration:underline;}
 	bottom:9px; 
 	right:13px;
 	height:26px;
-	width:123px;
+	width:126px;
 	padding:10px 0 0 3px;
 	background-image:url(/images/spotlight_overlay.png);
 	background-repeat:no-repeat;
@@ -262,12 +262,16 @@ a:hover {color:#999; text-decoration:underline;}
 	bottom:11px; 
 	right:14px;
 	height:26px;
-	width:123px;
+	width:160px;
 	padding:10px 0 0 3px;
 	background-image:url(/images/spotlight_overlay.png);
 	background-repeat:no-repeat;
 	color:#fff;
 	font-size:12px; } 
+
+#new_spotlight img{
+		padding:40px 0 0 8px;
+	}
 
 #footer{
 	width:916px;
