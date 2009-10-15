@@ -20,31 +20,44 @@
   </p>
   
   <p>
-      <%= f.label :price %><br />
-      $<%= f.text_field :price %>
+      <%= f.label :price %> $<%= f.text_field :price %>
     </p>
+    
+    <p>
+    <%= f.label :spotlights %> 
+    <%= select_tag "spotlight", options_for_select([ "New", "Vintage", "None" ], "None")%>
+          
+    </p>
+        
    
-  <p>
-      <%= f.label :category, "Category" %>
-      <%= f.select :category, Category.find(:all, :order => 'name').collect { |c| [c.name, c.id] }, :include_blank => true %>
-  </p>
-  <p>
-      <label for="brand">Brand:<br/></label>
-      <%= f.select :brand, Brand.find(:all, :order => 'name').collect { |b| [b.name, b.id] }, :include_blank => true %>
-  </p>
+    <p>
+    <%= f.label :category %>
+    <%= f.select :category_id, Category.find(:all, :order => 'name').collect { |c| [c.name, c.id] }, :include_blank => true %>
+    </p>
+    
+    <p>
+    <%= f.label :brand %>
+    <%= f.select :brand_id, Brand.find(:all, :order => 'name').collect { |b| [b.name, b.id] }, :include_blank => true %>
+    </p>
       
       <div id="add_photo">
              <p><%= f.label 'Add Photos:' %><br>
-             <% f.attachment_fields_for :photos, :data, :new_objects => 1 do |attachment_fields| %>
-               	<%= attachment_fields.label :data, 'Photo' %>
-             		    <%= attachment_fields.file_field :data %>
-             	    <%= attachment_fields.label :front, 'Primary Photo' %>
-                  	<%= attachment_fields.check_box :front %> |
-             		<%= attachment_fields.label :_delete, 'Delete Photo' %>
-             		    <%= attachment_fields.check_box :_delete  %>
-         	<%- end -%>
-             </p>
-         </div>
+             <% f.attachment_fields_for :photos, :data, :new_objects => 1, :js_lib => :jquery do |attachment_fields| %>
+              	<%= attachment_fields.label :data, 'Photo' %>
+            		<%= attachment_fields.file_field :data %>
+            		<%= attachment_fields.label :front, 'Primary Photo' %>
+            		<%= attachment_fields.check_box :front %> |
+            		<%= attachment_fields.label :_delete, 'Delete Photo' %>
+            		<%= attachment_fields.check_box :_delete  %>
+            	<%- end -%>
+                </p>
+            </div>
+              
+        
+         
+         
+         
+         
   <p><%= f.label :audioclip %><br>
       <%= f.file_field :audioclip %></p>
   

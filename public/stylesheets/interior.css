@@ -10,6 +10,17 @@
 	color:#333;
 }
 
+#errorExplanation{
+	color:#cc0000;
+}
+#errorExplanation ul{
+	list-style-position:inside;
+}
+#errorExplanation ul li{
+	padding-left:20px;
+	
+}
+
 #interior_pad{
 	padding:35px 50px 0 50px;
 }
@@ -48,6 +59,10 @@
 	margin-left:4px;
 	padding-left:330px;
 	padding-top:3px;
+	color:#fff;
+}
+#interior_sub_head #sub_green_head{
+	width:250px;
 }
 #interior_sub_head .pagination{
 	float:right;
@@ -55,7 +70,11 @@
 	padding-top:10px;
 	font-size:12px;
 	font-weight:bold;
+	color:#fff;
 }
+.pagination a{color:#fff;}
+.pagination a:hover{color:#333;}
+
 #interior_sub_head p{
 	color:#fff;
 	font-size:18px;
@@ -157,20 +176,29 @@
 	border:1px solid #666;
 	padding:2px;
 }
+#product_show_thumb tr td{
+padding-right:5px;
+border-bottom:none;
+}
 
+										/* Product new/edit styles */
+
+									
+										
 										/* Staff Styles */
 #staff{
 	border-bottom:1px dotted #999;
 	padding:10px 15px 15px 15px;
 	margin-top:20px;
+		width:670px;
 
 }
 										
 #staff tr td{
-	width:670px;
+
 
 }
-#staff tr td img{padding:2px; border:1px solid #777; margin:0 5px 5px 0;}
+#staff tr td img{padding:2px; border:1px solid #777; margin:0 10px 0px 0;}
 
 .staff_name{font-size:12px; font-weight:bold;}
 .staff_link{font-size:12px;}

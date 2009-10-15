@@ -9,7 +9,8 @@ class Photo < ActiveRecord::Base
     :styles => {
       :tiny => "50x50>",
       :catalog => "140x107#",
-      :original => "400x400>"
+      :original => "700x700>",
+      :spotlight => "236x216#",
     }
 
     validates_attachment_presence :data

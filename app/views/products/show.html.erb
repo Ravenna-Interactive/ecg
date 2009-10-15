@@ -14,9 +14,13 @@
         <p id="product_main_text"><b><%= @product.brand.name %> <%=h @product.title %></b> - $<%= @product.price %><br>
         <%= @product.description %></p>
         <p id="clear"></p>
+<table id="product_show_thumb">
+    <tr>
 <% for photo in @product.photos %>
- <p><%= image_tag photo.data.url(:tiny), :alt => ""  %></p>
+ <td><%= link_to (image_tag(photo.data.url(:tiny)), photo.data.url(:original), :class => "thickbox") -%></td>
 <% end %>
+    </tr>
+</table>
         
         <p>Audio Clip: <%= link_to "Listen", @product.audioclip.url %></p>
         
