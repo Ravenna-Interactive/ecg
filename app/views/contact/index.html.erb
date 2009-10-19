@@ -6,36 +6,32 @@
     
     <div id="interior_sub_head"><h5 id="sub_green_head"></h5></div>
 
-<div id="interior_right">
-    <%= @page.body %>    
-</div>
 
 <div id="contact_form">
     <% form_tag :action => "send_mail" do %>
-     <p>
-       <%= label :email, :name, "Name:" %><br />
-       <%= text_field :email, :name %>
-     </p>
+         <p>
+           <%= label :email, :name, "Name:" %><br />
+           <%= text_field :email, :name %>
+         </p>
 
-     <p>
-       <%= label :email, :address, "Your Email Address:" %><br />
-       <%= text_field :email, :address %>
-     </p>
-     <p>
-            <%= label :email, :phone, "Phone Number:" %><br />
-            <%= text_field :email, :phone %>
-     </p>
-     
-  
-     <p>
-          <%= label :email, :product, "Comment:" %><br />
-          <%= text_area :email, :product, :rows => 8, :cols => 50  %>
-     </p>
+         <p>
+           <%= label :email, :address, "Your Email Address:" %><br />
+           <%= text_field :email, :address %>
+         </p>
+         <p>
+                <%= label :email, :phone, "Phone Number:" %><br />
+                <%= text_field :email, :phone %>
+         </p>
 
-     <p>
-       <%= submit_tag "Submit" %>
-     </p>
-   <% end %>
+         <p>
+              <%= label :email, :comment, "Comment:" %><br />
+              <%= text_area :email, :comment, :rows => 8, :cols => 50  %>
+         </p>
+
+         <p>
+           <%= submit_tag "Submit" %>
+         </p>
+       <% end %>
 
    </div>
 </div>

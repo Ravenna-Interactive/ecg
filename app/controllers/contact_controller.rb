@@ -8,6 +8,6 @@ class ContactController < ApplicationController
   def send_mail
     Notifications.deliver_contact_form(params[:email])
     flash[:notice] = "Email was succesfully sent."
-    redirect_to :action => "index"
+    redirect_to :controller => "static", :action => "home"
   end
 end

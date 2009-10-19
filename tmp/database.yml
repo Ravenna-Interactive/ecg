@@ -1,0 +1,7 @@
+--- 
+production: 
+  username: ecg_prod
+  adapter: mysql
+  database: ecg_prod
+  host: mysql.emeraldcityguitars.com
+  password: bulldog.72
