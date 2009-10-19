@@ -29,7 +29,6 @@
           
     </p>
     <p>
-<<<<<<< HEAD:app/views/products/edit.html.erb
          <%= f.label :category, "Category" %>
          <%= f.select :category_id, Category.find(:all, :order => 'name').collect { |c| [c.name, c.id] }, :include_blank => true %>
      </p>
@@ -39,28 +38,16 @@
          <%= f.select :brand_id, Brand.find(:all, :order => 'name').collect { |b| [b.name, b.id] }, :include_blank => true %>
      </p>
      
-
-     
-     
-=======
-        <%= f.label :category, "Category" %>
-        <%= f.select :category, Category.find(:all, :order => 'name').collect { |c| [c.name, c.id] }, :include_blank => true %>
-    </p>
-    <p>
-        <label for="brand">Brand:<br/></label>
-        <%= f.select :brand, Brand.find(:all, :order => 'name').collect { |b| [b.name, b.id] }, :include_blank => true %>
-    </p>
->>>>>>> beau:app/views/products/edit.html.erb
     
     <div id="add_photo">
          <p><%= f.label 'Add/Remove Photos:' %><br>
          <% f.attachment_fields_for :photos, :data, :new_objects => 0, :js_lib => :jquery do |attachment_fields| %>
-     		<%= image_tag(attachment_fields.object.data(:tiny)) unless attachment_fields.nil?%>
+     		<%= image_tag(attachment_fields.object.data(:tiny)) unless attachment_fields.object.new_record?%>
      		<%= attachment_fields.label :data, 'Photo' %>
      		<%= attachment_fields.file_field :data %>
      		<%= attachment_fields.label :front, 'Primary Photo' %>
      		<%= attachment_fields.check_box :front %>
-     		<% unless f.object.new_record? %> |
+     		<% unless attachment_fields.object.new_record? %> |
      		    <%= attachment_fields.label :_delete, 'Delete Photo' %>
      		    <%= attachment_fields.check_box :_delete  %>
      		<% end %>
