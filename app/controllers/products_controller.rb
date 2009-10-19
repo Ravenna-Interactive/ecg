@@ -28,6 +28,10 @@ class ProductsController < ApplicationController
   # GET /products/new.xml
   def new
     @product = Product.new
+<<<<<<< HEAD:app/controllers/products_controller.rb
+=======
+   # @spotlight = Spotlight.find(:all)
+>>>>>>> beau:app/controllers/products_controller.rb
     
   end
 

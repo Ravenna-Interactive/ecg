@@ -29,6 +29,7 @@
           
     </p>
     <p>
+<<<<<<< HEAD:app/views/products/edit.html.erb
          <%= f.label :category, "Category" %>
          <%= f.select :category_id, Category.find(:all, :order => 'name').collect { |c| [c.name, c.id] }, :include_blank => true %>
      </p>
@@ -41,6 +42,15 @@
 
      
      
+=======
+        <%= f.label :category, "Category" %>
+        <%= f.select :category, Category.find(:all, :order => 'name').collect { |c| [c.name, c.id] }, :include_blank => true %>
+    </p>
+    <p>
+        <label for="brand">Brand:<br/></label>
+        <%= f.select :brand, Brand.find(:all, :order => 'name').collect { |b| [b.name, b.id] }, :include_blank => true %>
+    </p>
+>>>>>>> beau:app/views/products/edit.html.erb
     
     <div id="add_photo">
          <p><%= f.label 'Add/Remove Photos:' %><br>
