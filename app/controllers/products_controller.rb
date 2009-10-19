@@ -34,7 +34,6 @@ class ProductsController < ApplicationController
   # GET /products/1/edit
   def edit
     @product = Product.find(params[:id])
-    @product.photos.build if @product.photos.first.nil?
   end
 
   # POST /products
