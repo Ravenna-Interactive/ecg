@@ -13,7 +13,7 @@ class Photo < ActiveRecord::Base
       :spotlight => "236x216#",
     }
 
-    validates_attachment_presence :data
+    #validates_attachment_presence :data
     validates_attachment_content_type :data, 
     :content_type => ['image/jpeg', 'image/pjpeg', 
                                      'image/jpg', 'image/png']
