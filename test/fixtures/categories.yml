@@ -2,6 +2,8 @@
 
 electric:
   name: Electric
+  url_name: electric
 
 acoustic:
   name: Acoustic
+  url_name: acoustic
