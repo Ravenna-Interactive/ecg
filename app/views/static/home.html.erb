@@ -1,10 +1,16 @@
+<% if @banner.switch %>
 <script type="text/javascript">
-<% if Banner.find(:first).switch == true %>
     $(document).ready(function(){
         tb_show(null,"/find_banner?height=415&width=400", "");
     });
-<% end %>
 </script>
+<% elsif !@banner.switch == false %>
+    <script></script>
+
+<% else %>
+    <script></script>
+<% end %>
+
 
 <div id="main_image_container">
         <div id="main_image"><%= image_tag "/images/main_image.png" %>

@@ -2,6 +2,7 @@ class StaticController < ApplicationController
    before_filter :find_categories
   
   def home
+    @banner = Banner.first
     @visitors = Visitor.find(:all, :order => "Random()", :limit => 1)
     @categories = Category.all
     @new_spotlight = Product.find_new_spotlight
