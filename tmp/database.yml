@@ -4,4 +4,4 @@ production:
   adapter: mysql
   database: ecg_prod
   host: mysql.emeraldcityguitars.com
-  password: Bulldog.72
+  password: bulldog.72
