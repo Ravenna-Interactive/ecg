@@ -1,14 +1,10 @@
-<% if @banner.switch %>
+<% if @banner && @banner.switch %>
 <script type="text/javascript">
     $(document).ready(function(){
         tb_show(null,"/find_banner?height=415&width=400", "");
     });
 </script>
-<% elsif !@banner.switch == false %>
-    <script></script>
 
-<% else %>
-    <script></script>
 <% end %>
 
 

@@ -17,7 +17,7 @@
 <table id="product_show_thumb">
     <tr>
 <% for photo in @product.photos %>
- <td><%= link_to (image_tag(photo.data.url(:tiny)), photo.data.url(:original), :class => "thickbox") -%></td>
+ <td><%= link_to image_tag(photo.data.url(:tiny)), photo.data.url(:original), :target => "_blank" -%></td>
 <% end %>
     </tr>
 </table>

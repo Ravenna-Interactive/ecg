@@ -9,7 +9,7 @@ class Photo < ActiveRecord::Base
     :styles => {
       :tiny => "50x50>",
       :catalog => "140x107#",
-      :original => "700x700>",
+      :original => "1000x1000>",
       :spotlight => "236x216#",
     }
 
