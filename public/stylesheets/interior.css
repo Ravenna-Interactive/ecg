@@ -68,11 +68,11 @@
 	float:right;
 	padding-right:20px;
 	padding-top:10px;
-	font-size:12px;
+	font-size:14px;
 	font-weight:bold;
-	color:#fff;
+	color:#333;
 }
-.pagination a{color:#fff;}
+.pagination a{color:#333;}
 .pagination a:hover{color:#333;}
 
 #interior_sub_head p{
