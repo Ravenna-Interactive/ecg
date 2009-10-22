@@ -29,6 +29,7 @@ a:hover {color:#999; text-decoration:underline;}
 	width:960px;
 	height:50px;
 	position:relative;
+	z-index:3000;
 }
 #logo{
 	position:absolute;
@@ -110,8 +111,7 @@ a:hover {color:#999; text-decoration:underline;}
 	background-repeat: repeat-x;
 	width:100%;
 	height:325px;
-	position:relative;
-	clear:both;
+
 }
 #main_image{
 	margin-left:auto;
@@ -124,6 +124,7 @@ a:hover {color:#999; text-decoration:underline;}
 	position:absolute;
 	top:275px;
 	left:700px;
+	z-index:1;
 }
 
 													/*  Main Image Styles */
