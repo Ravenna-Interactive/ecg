@@ -24,7 +24,7 @@
     </table>
     <% end %>
     <p>&nbsp;</p>
-    <p><%= link_to 'New staff', new_staff_path %></p>
+    <p><% if logged_in? %><%= link_to 'New staff', new_staff_path %><% end %></p>
 </div>
     
     <%= render :partial => 'shared/about_menu' %>
