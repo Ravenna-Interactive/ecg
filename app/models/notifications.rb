@@ -2,7 +2,7 @@ class Notifications < ActionMailer::Base
     
     def wish_list(email_params, sent_at = Time.now)
       subject "[Wish List] " #<< email_params[:subject]
-      recipients "tj@ravennainteractive.com" # Perhaps your address here?
+      recipients "jayboone@emeraldcityguitars.com" # Perhaps your address here?
       from email_params[:address]
       sent_on sent_at
 
@@ -19,7 +19,7 @@ class Notifications < ActionMailer::Base
     
      def contact_form(email_params, sent_at = Time.now)
         subject "[Contact Form] " #<< email_params[:subject]
-        recipients "tj@ravennainteractive.com" # Perhaps your address here?
+        recipients "jayboone@emeraldcityguitars.com" # Perhaps your address here?
         from email_params[:address]
         sent_on sent_at
 
