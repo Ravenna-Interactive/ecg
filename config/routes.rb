@@ -36,20 +36,14 @@ map.resources :categories
   map.find_banner 'find_banner', :controller => 'banners', :action => 'find_banner'
   map.contact 'contact', :controller => 'contact', :action => 'index'
   map.wish_list 'wish_list', :controller => 'wish_list', :action => 'index'
-  
-  #map.with_options :controller => 'products', :action => 'products' do |product|
-  #  product.acoustics '/acoustics',     :id => 'acoustics'
-  #   product.electrics '/electrics',     :id => 'electrics'
-  #   product.bass      '/bass',          :id => 'bass'
-  #   product.amps      '/amps',          :id => 'amps'
-  #   product.effects   '/effects-other', :id => 'effects-other'
-  #  end
+
   
   map.with_options :controller => 'static' do |static|
     static.home 'home', :action => 'home'
     static.about 'about', :action => 'about'
     static.history 'history', :action => 'history'
     static.shop_info 'shop_info', :action => 'shop_info'
+    static.repairs 'repairs', :action => 'repairs'
     static.admin 'admin', :action => 'admin'
   end
  

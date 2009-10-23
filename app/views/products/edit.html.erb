@@ -19,8 +19,7 @@
     <%= f.text_area :description %>
   </p>
   <p>
-      <%= f.label :price %><br />
-      $<%= f.text_field :price %>
+      <%= f.label :price %> $<%= f.text_field :price %>
     </p>
     
     <p>
@@ -55,13 +54,14 @@
          </p>
      </div>
 
-   <p>
-          <%= f.label :video %><br />
-          <%= f.text_area :video %>
-   </p>
-  <p>
-    <%= f.submit 'Update' %>
-  </p>
+     <p><%= f.label :audioclip %><br>
+         <%= f.file_field :audioclip %></p>
+
+     <p><%= f.label :video %><br />
+          <%= f.text_area :video %></p>
+          
+  <p><%= f.submit 'Update' %></p>
+  
 <% end %>
 
 <%= link_to 'Show', @product %> |

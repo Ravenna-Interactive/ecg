@@ -17,9 +17,9 @@
            <span class="staff_link"><%= link_to staff.link, staff.link %></span><br>
            <span class="staff_bio"><%=h staff.bio %></span><td>
        </tr>    
-       <tr>
+       <tr><% if logged_in? %> 
            <td><%= link_to 'Edit', edit_staff_path(staff) %> | 
-               <%= link_to 'Destroy', staff, :confirm => 'Are you sure?', :method => :delete %></td>
+               <%= link_to 'Destroy', staff, :confirm => 'Are you sure?', :method => :delete %></td><% end %>
        </tr>
     </table>
     <% end %>

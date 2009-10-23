@@ -21,6 +21,10 @@ class StaticController < ApplicationController
     @page = Page.find_by_name('about')
   end
   
+  def repairs
+     @page = Page.find_by_name('repairs')
+  end
+  
   def find_banner
     @banner = Banner.find(:first)
     render :layout => false
@@ -31,5 +35,7 @@ class StaticController < ApplicationController
     @banners = Banner.all
     @staffs = Staff.all
   end
+  
+ 
   
 end

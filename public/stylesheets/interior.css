@@ -264,6 +264,7 @@ border-bottom:none;
 	margin-right:auto;
 	margin-left:auto;
 	margin-bottom:15px;
+	clear:both;
 }
 #interior_footer p{
 	float:right;
