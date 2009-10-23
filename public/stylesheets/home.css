@@ -279,7 +279,7 @@ a:hover {color:#999; text-decoration:underline;}
 	background-repeat:no-repeat;
 	color:#fff;
 	font-size:12px; 
-	z-index:3000;} 
+	z-index:1;} 
 
 #new_spotlight img{
 		padding:40px 0 0 8px;
