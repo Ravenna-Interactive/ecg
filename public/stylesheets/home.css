@@ -233,7 +233,9 @@ a:hover {color:#999; text-decoration:underline;}
 	margin-right:34px;
 	position:relative;
 }
-
+#vintage_spotlight a{
+	color:#fff;
+}
 #vintage_spotlight img{
 	padding:40px 0 0 8px;
 }
@@ -259,6 +261,9 @@ a:hover {color:#999; text-decoration:underline;}
 	width:257px;
 	margin-right:34px;
 	position:relative;
+}
+#new_spotlight a{
+	color:#fff;
 }
 #new_spotlight_overlay{
 	position:absolute; 
