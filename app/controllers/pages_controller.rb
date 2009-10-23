@@ -64,7 +64,7 @@ class PagesController < ApplicationController
     respond_to do |format|
       if @page.update_attributes(params[:page])
         flash[:notice] = 'Page was successfully updated.'
-        format.html { redirect_to(pages_url) }
+        format.html { redirect_to(admin_path) }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }

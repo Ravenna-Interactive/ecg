@@ -115,6 +115,9 @@
 	margin-right:4px;
 	height:auto;
 }
+#product_listing_container p{
+	height:100%;
+}
 #product_listing{
 	width:770px;
 }
