@@ -40,7 +40,7 @@
     </div><!-- Image 258px x 198px -->
 
     <div id="vintage_spotlight">
-        <div id="vintage_spotlight_overlay"><%= link_to @vintage_spotlight.title, @vintage_spotlight if @vintage_spotlight? %></div>
+        <div id="vintage_spotlight_overlay"><%= link_to @vintage_spotlight.title, @vintage_spotlight %></div>
            <%= image_tag @vintage_spotlight.front_photo.data.url(:spotlight) unless @vintage_spotlight.blank? %>
         </div>
     <div id="new_spotlight">
