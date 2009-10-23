@@ -252,8 +252,7 @@ a:hover {color:#999; text-decoration:underline;}
 	background-image:url(/images/spotlight_overlay.png);
 	background-repeat:no-repeat;
 	color:#fff;
-	font-size:12px;
-	z-index:3000; }
+	font-size:12px;}
 
 #new_spotlight{
 	float:left;
@@ -278,8 +277,7 @@ a:hover {color:#999; text-decoration:underline;}
 	background-image:url(/images/spotlight_overlay.png);
 	background-repeat:no-repeat;
 	color:#fff;
-	font-size:12px; 
-	z-index:1;} 
+	font-size:12px; } 
 
 #new_spotlight img{
 		padding:40px 0 0 8px;

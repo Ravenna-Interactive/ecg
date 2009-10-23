@@ -43,16 +43,22 @@
         <% if @vintage_spotlight.blank? %>
         
         <% else %>
-        <div id="vintage_spotlight_overlay"><%= link_to @vintage_spotlight.title, @vintage_spotlight %></div>
-           <%= link_to (image_tag @vintage_spotlight.front_photo.data.url(:spotlight)), @vintage_spotlight %>
-        <% end %>
+        <div id="vintage_spotlight_overlay">
+            <div><%= link_to @vintage_spotlight.title, @vintage_spotlight %></div>
         </div>
+            <%= link_to (image_tag @vintage_spotlight.front_photo.data.url(:spotlight)), @vintage_spotlight %>
+           
+        <% end %>
+    </div>
+    
     <div id="new_spotlight">
             <% if @new_spotlight.blank? %>
             
             <% else %>
+                <div>
                 <div id="new_spotlight_overlay"><%= link_to @new_spotlight.title, @new_spotlight %></div>
        <%= link_to (image_tag @new_spotlight.front_photo.data.url(:spotlight)), @new_spotlight %>
+                </div>
             <% end %>
     </div>
     
