@@ -241,10 +241,9 @@ a:hover {color:#999; text-decoration:underline;}
 }
 
 
-
 #vintage_image_title{
 	position:absolute; 
-	bottom:9px; 
+	bottom:0px; 
 	right:10px;
 	height:26px;
 	width:160px;
@@ -267,15 +266,18 @@ a:hover {color:#999; text-decoration:underline;}
 	height:265px;
 	width:257px;
 	margin-right:34px;
-	position:relative;
-	z-index:3000;
 }
 #new_spotlight a{
 	color:#fff;
 }
-#new_spotlight_overlay{
+#new_image{
+	padding:0px 0 0 0px;
+	position:relative;
+}
+
+#new_image_title{
 	position:absolute; 
-	bottom:9px; 
+	bottom:0px; 
 	right:10px;
 	height:26px;
 	width:160px;

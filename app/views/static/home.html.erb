@@ -40,10 +40,14 @@
     </div><!-- Image 258px x 198px -->
 
     <div id="vintage_spotlight">
+        <% if @vintage_spotlight.blank? %>
+        
+        <% else %>
         <div id="vintage_image">
             <%= link_to (image_tag @vintage_spotlight.front_photo.data.url(:spotlight)), @vintage_spotlight %>
             <div id="vintage_image_title"><%= link_to @vintage_spotlight.title, @vintage_spotlight, :class => 'spotlight_link' %></div>
-        </div>
+        <% end %>
+    </div>
             
        
     </div>
@@ -52,10 +56,10 @@
             <% if @new_spotlight.blank? %>
             
             <% else %>
-                <div>
-                <div id="new_spotlight_overlay"><%= link_to @new_spotlight.title, @new_spotlight %></div>
-       <%= link_to (image_tag @new_spotlight.front_photo.data.url(:spotlight)), @new_spotlight %>
-                </div>
+            <div id="new_image">
+                <%= link_to (image_tag @new_spotlight.front_photo.data.url(:spotlight)), @new_spotlight %>
+                <div id="new_image_title"><%= link_to @new_spotlight.title, @new_spotlight %></div>
+            </div>
             <% end %>
     </div>
     
