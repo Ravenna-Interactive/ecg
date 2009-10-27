@@ -231,8 +231,7 @@ a:hover {color:#999; text-decoration:underline;}
 	height:265px;
 	width:257px;
 	margin-right:34px;
-/*	position:relative;
-	z-index:3000;*/
+	position:relative;
 }
 #vintage_spotlight a{
 	color:#fff;
