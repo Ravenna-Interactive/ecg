@@ -40,8 +40,14 @@
     </div><!-- Image 258px x 198px -->
 
     <div id="vintage_spotlight">
-        <%= link_to @vintage_spotlight.title, @vintage_spotlight %>
+        <% if @vintage_spotlight.blank? %>
         
+        <% else %>
+            <%= link_to @vintage_spotlight.title, @vintage_spotlight %>
+        
+            <%= link_to (image_tag @vintage_spotlight.front_photo.data.url(:spotlight)), @vintage_spotlight %>
+           
+        <% end %>
     </div>
     
     <div id="new_spotlight">
