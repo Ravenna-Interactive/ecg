@@ -237,6 +237,7 @@ a:hover {color:#999; text-decoration:underline;}
 }
 #vintage_image{
 	padding:40px 0 0 8px;
+	position:relative;
 }
 
 #vintage_spotlight_overlay{
