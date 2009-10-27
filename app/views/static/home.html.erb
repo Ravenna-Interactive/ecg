@@ -40,6 +40,11 @@
     </div><!-- Image 258px x 198px -->
 
     <div id="vintage_spotlight">
+        <div id="vintage_image">
+            <%= link_to (image_tag @vintage_spotlight.front_photo.data.url(:spotlight)), @vintage_spotlight %>
+            
+        </div>
+            
        <%= link_to @vintage_spotlight.title, @vintage_spotlight %>
     </div>
     

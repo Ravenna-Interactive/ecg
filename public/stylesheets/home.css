@@ -231,16 +231,13 @@ a:hover {color:#999; text-decoration:underline;}
 	height:265px;
 	width:257px;
 	margin-right:34px;
-	position:relative;
 }
 #vintage_spotlight a{
 	color:#fff;
 }
-#vintage_spotlight img{
+#vintage_image{
 	padding:40px 0 0 8px;
 }
-#spotlight_link{position:relative;}
-
 
 #vintage_spotlight_overlay{
 	position:absolute; 
