@@ -255,6 +255,11 @@ a:hover {color:#999; text-decoration:underline;}
 	font-size:12px;
 	z-index:100; }
 
+.spotlight_link{
+	position:relative;
+	z-index:200;
+}
+
 #new_spotlight{
 	float:left;
 	background-image:url(/images/new_spotlight_bg.png);
