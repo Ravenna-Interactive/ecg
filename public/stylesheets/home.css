@@ -240,7 +240,9 @@ a:hover {color:#999; text-decoration:underline;}
 	position:relative;
 }
 
-#vintage_spotlight_overlay{
+
+
+#vintage_image_title{
 	position:absolute; 
 	bottom:9px; 
 	right:10px;
@@ -251,7 +253,7 @@ a:hover {color:#999; text-decoration:underline;}
 	background-repeat:no-repeat;
 	color:#fff;
 	font-size:12px;
-	z-index:3000; }
+	z-index:100; }
 
 #new_spotlight{
 	float:left;
