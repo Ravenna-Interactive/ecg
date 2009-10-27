@@ -44,7 +44,7 @@
         
         <% else %>
         <div id="vintage_spotlight_overlay">
-            <div><%= link_to @vintage_spotlight.title, @vintage_spotlight %></div>
+            <div><%= link_to @vintage_spotlight.title, @vintage_spotlight, :class => 'spotlight_link' %></div>
         </div>
             <%= link_to (image_tag @vintage_spotlight.front_photo.data.url(:spotlight)), @vintage_spotlight %>
            

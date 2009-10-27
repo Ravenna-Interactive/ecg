@@ -240,6 +240,7 @@ a:hover {color:#999; text-decoration:underline;}
 #vintage_spotlight img{
 	padding:40px 0 0 8px;
 }
+#spotlight_link{position:relative;}
 
 
 #vintage_spotlight_overlay{
