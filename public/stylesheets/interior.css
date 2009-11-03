@@ -210,7 +210,11 @@ border-bottom:none;
 										/* About Styles */
 										
 #product_listing_container p{
-	padding:10px 50px 10px 50px;
+	padding:30px 50px 10px 50px;
+}
+
+#about_content ul{
+	padding-left:30px;
 }
 										
 										/* Contact Form Styles */
