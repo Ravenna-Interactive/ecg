@@ -20,6 +20,7 @@ class CategoriesController < ApplicationController
       @category = Category.find_by_url_name(params[:id])
       @brands = @category.brands
       @categories = Category.find(:all)
+      @meta_title = "#{@category.name}"
 
       respond_to do |format|
         format.html do |wants|

@@ -19,6 +19,7 @@ class BrandsController < ApplicationController
       @category = Category.find_by_url_name(params[:category_id])
       @brand = Brand.find(params[:id])
       @products = Product.paginate(:conditions => {:brand_id => @brand, :category_id => @category}, :page => params[:page] )
+      @meta_title = "#{@brand.name}"
       respond_to do |format|
         format.html # show.html.erb
         format.xml  { render :xml => @brand }
