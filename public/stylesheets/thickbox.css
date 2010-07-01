@@ -107,7 +107,7 @@ margin-top: expression(0 - parseInt(this.offsetHeight / 2) + (TBWindowMargin = d
 	clear:both;
 	padding:2px 15px 15px 15px;
 	overflow:auto;
-	text-align:left;
+	text-align:center;
 	line-height:1.4em;
 }
 
