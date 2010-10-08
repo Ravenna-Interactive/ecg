@@ -19,13 +19,16 @@ class CategoriesController < ApplicationController
   def show
       @category = Category.find_by_url_name(params[:id])
       @brands = @category.brands
+    
       @categories = Category.find(:all)
       @meta_title = "#{@category.name}"
 
       respond_to do |format|
         format.html do |wants|
           @brand = @brands.first
-          @products = @category.products.paginate(:conditions => {:brand_id => @brand}, :page => params[:page])
+          
+          @search = @category.products.search(params[:search])
+          @products = @search.paginate(:conditions => {:brand_id => @brand}, :page => params[:page])
           render :template => 'brands/show'
         end
         format.xml  { render :xml => @category }

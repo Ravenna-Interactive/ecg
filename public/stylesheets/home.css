@@ -2,7 +2,7 @@ html, body, div, h1, h2, h3, h4, h5, h6, ul, ol, dl, li, dt, dd, p, blockquote,
 pre, form, fieldset, table, th, td { margin: 0; padding: 0; }
 
 body{
-	background-color:#fef0c2;
+	background-color:#f8e4a4; /* #fef02c*/
 	font-family:Arial, Verdana, Helvetica, sans-serif;
 }
 img{
@@ -16,6 +16,7 @@ a:hover {color:#999; text-decoration:underline;}
 #clear{
 	clear:both;
 }
+.clear{clear:both;}
 
 #top_wood{
 	width:100%;
@@ -33,7 +34,7 @@ a:hover {color:#999; text-decoration:underline;}
 }
 #logo{
 	position:absolute;
-	z-index:100;
+	z-index:25;
 	top:16px;
 	left:-7px;
 }

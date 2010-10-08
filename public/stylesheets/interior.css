@@ -47,8 +47,8 @@
 }
 #int_header{
 	text-align:right;
-	padding:14px 60px 0 0;
-	font-size:18px;
+	padding:20px 60px 0 0;
+	font-size:1.6em;
 	font-weight:bold;
 }
 
@@ -63,6 +63,8 @@
 }
 #interior_sub_head #sub_green_head{
 	width:250px;
+	font-size:1.4em;
+	padding-top:8px;
 }
 #interior_sub_head .pagination{
 	float:right;
@@ -174,15 +176,23 @@
 	float:left;
 }
 #one_product #product_main_text{
-	float:right;
-	width:705px;
+	float:left;
+	width:520px;
 }
 
 #one_product #product_main_image img{
 	border:1px solid #666;
 	padding:2px;
 }
-#product_show_thumb tr td{
+#product_show_thumb{
+	width:335px;
+	float:right;
+}
+#product_show_thumb p{
+	float:left;
+	width:50px; height:50px;
+	padding-right:5px;
+}
 padding-right:5px;
 border-bottom:none;
 }
@@ -206,7 +216,7 @@ border-bottom:none;
 }
 #staff tr td img{padding:2px; border:1px solid #777; margin:0 10px 0px 0;}
 
-.staff_name{font-size:12px; font-weight:bold;}
+.staff_name{font-size:1.2em; font-weight:bold;}
 .staff_link{font-size:12px;}
 .staff_bio{font-size:12px;}
 
@@ -237,20 +247,18 @@ border-bottom:none;
 #visitor{
 	float:left;
 	text-align:center;
-	width:150px;
-	margin:0 10px 0 10px;
-	padding:10px 0 10px 0;
+	width:185px;
+	height:190px;
+	margin:0 2px;
+	padding:0;
 }
+.visitor_image_1{width:185px; height:146px; background-image:url(/images/visitor_frame_1.png); background-repeat:no-repeat; padding-top:14px;}
+.visitor_image_2{width:185px; height:146px; background-image:url(/images/visitor_frame_2.png); background-repeat:no-repeat; padding-top:14px;}
 
-/*
-#visitor{
-	float:right;
-	width:770px;
-	margin-right:4px;
-	height:auto;
-	display:inline;
-	padding-top:20px;
-}*/
+.visitor_image_3{width:185px; height:146px; background-image:url(/images/visitor_frame_3.png); background-repeat:no-repeat; padding-top:14px;}
+
+
+
 										
 #contact_form p{
 	font-size:12px;

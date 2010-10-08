@@ -1,4 +1,12 @@
 <%= render :partial => 'shared/interior_hero' %>
+<% content_for :head do %>
+	<meta property="og:title" content="<%=h @product.title %>"/>
+	<meta property="og:type" content="product"/>
+	<meta property="og:url" content="http://emeraldcityguitars.com/products/<%= @product.title.downcase %>" />
+	<meta property="og:image" content="http://emeraldcityguitars.com/system/products/<%= @product.id%>/<%= @product.front_photo.data.url(:catalog) %>"/>
+<% end %>
+
+
 
 <div id="interior_wrapper">
     <div id="interior_header_absolute">
@@ -11,19 +19,23 @@
 <div id="interior_pad">
     
     <div id="one_product">
-        <p id="product_main_image"><%= image_tag(@product.front_photo.data.url(:catalog))  unless @product.front_photo.nil?%><p>
-        <p id="product_main_text"><b><%= @product.brand.name %> <%=h @product.title %></b> - $<%= @product.price %><br>
+		<h1><%= @product.brand.name %> <%=h @product.title %></h1>
+		
+		<div id="product_show_thumb">
+			<% for photo in @product.photos %>
+		 		<p><%= link_to (image_tag(photo.data.url(:tiny)), photo.data.url(:original), :rel => "shadowbox[gallery]") -%></p>
+			<% end %>
+		</div>
+	
+        <!--><p id="product_main_image"><%#= image_tag(@product.front_photo.data.url(:catalog))  unless @product.front_photo.nil?%><p>-->
+        <p id="product_main_text"><b>$<%= @product.price %></b><br>
         <%= @product.description %></p>
         <p id="clear"></p>
-<table id="product_show_thumb">
-    <tr>
-<% for photo in @product.photos %>
- <td><%= link_to (image_tag(photo.data.url(:tiny)), photo.data.url(:original), :class => "thickbox") -%></td>
-<% end %>
-    </tr>
-</table>
+		
+		<fb:like href="http://emeraldcityguitars.com" layout="standard" show_faces="true" width="400" action="like" font="segoe ui" colorscheme="light" />
+		
         
-        <p>
+        <p class="clear">
           Audio Clip:
           <% if @product.audioclip_file_name.nil? -%>
             No Audio Clip.  Check back soon!
@@ -34,8 +46,18 @@
        
             
         <p><%= @product.video unless @product.nil? %></p>
-        </div>
 
-</div>
-</div>
+        </div><!-- End One Product-->
+		<p class="clear"></p>
+	</div><!-- End Interior Pad -->
+</div><!-- End Interior Wrapper-->
+<script src="http://connect.facebook.net/en_US/all.js"></script>
+<script>
+  FB.init({
+    status : true, // check login status
+    cookie : true, // enable cookies to allow the server to access the session
+    xfbml  : true  // parse XFBML
+  });
+</script>
+
 <%= render :partial => 'shared/interior_footer' %>

@@ -8,10 +8,19 @@
   <title>Emerald City Guitars :: <%= @meta_title%></title>
   <meta name="keywords" content="<%= @meta_keywords %>" />
   <meta name="description" content="<%= @meta_description %>" />
-  
-  <%= stylesheet_link_tag 'home', 'interior', 'thickbox', 'sifr' %>
-  <%= javascript_include_tag :defaults, 'thickbox.js', 'cycle.js', 'sifr.js', 'sifr-config.js', 'supersleight-min'%>
-
+	<meta property="og:site_name" content="Emerald City Guitars"/>
+	<meta property="fb:admins" content="241172603279"/>
+  <%= yield :head -%>
+  <%= stylesheet_link_tag 'home', 'interior', 'shadowbox' %>
+  <%= javascript_include_tag :defaults, 'shadowbox.js', 'cycle.js', 'cufon', 'Rosewood_Std_400.font', 'supersleight-min'%>
+	<script type="text/javascript">
+				Cufon.replace('h6#int_header'); 
+				Cufon.replace('h5#sub_green_head');
+				Cufon.replace('#one_product h1');
+				Cufon.replace('#main_nav li a');
+				Cufon.replace('.staff_name');
+			</script>
+	
 </head>
 
 <body>
@@ -58,6 +67,8 @@
                 <li><%= link_to 'Blog', "http://blog.emeraldcityguitars.com" %></li>
                     <li>|</li>
                 <li><%= link_to 'Repairs', repairs_path %></li>
+					<li>|</li>
+                <li><%= link_to 'You Tube', "http://www.youtube.com/user/emeraldcityguitars" %></li>
                  
             </ul>    
         </div><!-- End Top Blue Interior-->
@@ -72,5 +83,10 @@
 <p style="color: green"><%= flash[:notice] %></p>
 <p style="color: red"><%= flash[:error] %></p>
 <%= render :partial => 'shared/google_analytics' %>
+
+<script type="text/javascript">
+Shadowbox.init();
+</script>
+<script type="text/javascript"> Cufon.now(); </script>
 </body>
 </html>
