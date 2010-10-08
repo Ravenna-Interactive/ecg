@@ -192,9 +192,7 @@
 	float:left;
 	width:50px; height:50px;
 	padding-right:5px;
-}
-padding-right:5px;
-border-bottom:none;
+	border-bottom:none;
 }
 
 										/* Product new/edit styles */
@@ -202,20 +200,13 @@ border-bottom:none;
 									
 										
 										/* Staff Styles */
-#staff{
-	border-bottom:1px dotted #999;
-	padding:10px 15px 15px 15px;
-	margin-top:20px;
-		width:670px;
-
+.staff{
+	padding:0 0 10px 10px;
+	width:650px;
 }
-										
-#staff tr td{
+#product_listing_container .staff p{padding:10px 0 0 0 ; width:100%;}
 
-
-}
-#staff tr td img{padding:2px; border:1px solid #777; margin:0 10px 0px 0;}
-
+.staff img{padding:2px; border:1px solid #777; margin:0 10px 0px 0;}
 .staff_name{font-size:1.2em; font-weight:bold;}
 .staff_link{font-size:12px;}
 .staff_bio{font-size:12px;}

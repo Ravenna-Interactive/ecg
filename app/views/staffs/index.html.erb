@@ -8,20 +8,18 @@
 
 
 <div id="product_listing_container">
-    
+    <p class="pad_10"></p>
    <% @staffs.each do |staff| %>
-   <table id="staff">
-       <tr>
-           <td><%= image_tag staff.photo.url(:thumb), :align => 'left' %>
+   <div class="staff">
+      <%= image_tag staff.photo.url(:thumb), :align => 'left' %>
            <span class="staff_name"><%=h staff.name %></span><br>
            <span class="staff_link"><%= link_to staff.link, staff.link %></span><br>
            <span class="staff_bio"><%=h staff.bio %></span><td>
-       </tr>    
-       <tr><% if logged_in? %> 
-           <td><%= link_to 'Edit', edit_staff_path(staff) %> | 
-               <%= link_to 'Destroy', staff, :confirm => 'Are you sure?', :method => :delete %></td><% end %>
-       </tr>
-    </table>
+           
+       <p><% if logged_in? %> <%= link_to 'Edit', edit_staff_path(staff) %> | <%= link_to 'Destroy', staff, :confirm => 'Are you sure?', :method => :delete %> <% end %>
+		</p>
+      </div>
+		<p class="staff_pad">&nbsp;</p>
     <% end %>
     <p>&nbsp;</p>
     <p><% if logged_in? %><%= link_to 'New staff', new_staff_path %><% end %></p>
