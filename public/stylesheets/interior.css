@@ -235,7 +235,7 @@
 	padding-top:30px;
 }
 
-#visitor{
+.visitor{
 	float:left;
 	text-align:center;
 	width:185px;
@@ -243,6 +243,7 @@
 	margin:0 2px;
 	padding:0;
 }
+#visitor_image_1 img{width:150px; height:112px;}
 .visitor_image_1{width:185px; height:146px; background-image:url(/images/visitor_frame_1.png); background-repeat:no-repeat; padding-top:14px;}
 .visitor_image_2{width:185px; height:146px; background-image:url(/images/visitor_frame_2.png); background-repeat:no-repeat; padding-top:14px;}
 

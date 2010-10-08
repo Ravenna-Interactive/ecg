@@ -8,7 +8,7 @@
 
 <div id="visitor_listing">
 <% @visitors.each do |visitor| %>
-<div id="visitor">
+<div class="visitor">
    
     <p class="visitor_image_<%=cycle('1','2', '3')%>"><%= link_to(image_tag(visitor.photo.url(:visitor)), visitor.photo.url(:thickbox), :rel => "shadowbox", :title => visitor.second_caption) %></p>
 
