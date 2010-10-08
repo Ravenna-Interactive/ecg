@@ -12,7 +12,7 @@
    
     <p class="visitor_image_<%=cycle('1','2', '3')%>"><%= link_to(image_tag(visitor.photo.url(:visitor)), visitor.photo.url(:thickbox), :rel => "shadowbox", :title => visitor.second_caption) %></p>
 
-	<p><%=h truncate (visitor.caption, 50, "...")  %></p>
+	<p><%=h truncate (visitor.caption, 40, "...")  %></p>
     
 	<% if logged_in? %> 
     <p><%= link_to 'Edit', edit_visitor_path(visitor) %> | <%= link_to 'Destroy', visitor, :confirm => 'Are you sure?', :method => :delete %>
