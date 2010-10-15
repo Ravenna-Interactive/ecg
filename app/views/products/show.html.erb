@@ -4,7 +4,7 @@
 	<meta property="og:type" content="<%= @product.brand.name%>, <%=@product.title%>"/>
 	<meta property="og:url" content="http://emeraldcityguitars.com/products/<%= @product.id%>-<%= @product.title.gsub(" ", "-")
 	 %>" />
-	<meta property="og:image" content="http://emeraldcityguitars.com/<%= @product.id%><%= @product.front_photo.data.url(:catalog) %>"/>
+	<meta property="og:image" content="http://emeraldcityguitars.com<%= @product.front_photo.data.url(:catalog) %>"/>
 <% end %>
 
 
