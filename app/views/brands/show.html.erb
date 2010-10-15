@@ -2,16 +2,14 @@
 <div id="interior_wrapper">
     
     <div id="interior_header_absolute">
-        <h6 id="int_header"><%=h @category.name %></h6>
+        <h6 id="int_header"><%= @category.name %></h6>
     </div>
     
     <div id="interior_sub_head">
         <%= will_paginate @products %>
-		
-		<%#= order @search, :by => :price %>
-	
-        <h5 id="sub_green_head"><%=h @brand.name unless @brand.nil? %></h5>
+        <h5 id="sub_green_head"><%= @brand.name unless @brand.nil? %></h5>
     </div>
+
     
     <div id="product_listing_container">
         <table id="product_listing" cellspacing="0" cellpadding="0">
