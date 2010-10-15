@@ -2,7 +2,7 @@
 <div id="interior_wrapper">
     
     <div id="interior_header_absolute">
-        <h6 id="int_header"><%= @category.name %></h6>
+        <h6 id="int_header"><%=h @category.name %></h6>
     </div>
     
     <div id="interior_sub_head">
@@ -10,7 +10,7 @@
 		
 		<%#= order @search, :by => :price %>
 	
-        <h5 id="sub_green_head"><%= @brand.name unless @brand.nil? %></h5>
+        <h5 id="sub_green_head"><%=h @brand.name unless @brand.nil? %></h5>
     </div>
     
     <div id="product_listing_container">
@@ -29,7 +29,14 @@
                             <%= link_to image_tag(product.front_photo.data.url(:catalog)), product unless product.front_photo.nil? %></td><tr>
                          <tr><td class="product_info">
                              <h3><%= link_to product.title, product %></h3><br>
-                          <%=h truncate(product.description, 100, "...") %><br><br> 
+                          <%=h truncate(product.description, 100, "...") %><br>
+						<% if logged_in? %> 
+							<p>	<%= link_to 'Edit', edit_product_path(product) %> | 
+								<%= link_to 'Destroy', product, :confirm => 'Are you sure?', :method => :delete %> </p>
+							<% end %>
+								
+
+<br> 
                           <h3>$<%= product.price %></h3></td></tr>
                       </table>
                     <!-- End Product listing styling-->

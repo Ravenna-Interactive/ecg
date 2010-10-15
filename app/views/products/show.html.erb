@@ -22,6 +22,7 @@
     <div id="one_product">
 		<h1><%= @product.brand.name %> <%=h @product.title %></h1>
 		
+		
 		<div id="product_show_thumb">
 			<% for photo in @product.photos %>
 		 		<p><%= link_to (image_tag(photo.data.url(:tiny)), photo.data.url(:original), :rel => "shadowbox[gallery]") -%></p>
