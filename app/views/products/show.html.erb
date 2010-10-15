@@ -1,7 +1,7 @@
 <%= render :partial => 'shared/interior_hero' %>
 <% content_for :head do %>
 	<meta property="og:title" content="<%=h @product.title %>"/>
-	<meta property="og:type" content="<%=@product.title%>"/>
+	<meta property="og:type" content="<%=h @product.title%>"/>
 	<meta property="og:url" content="http://emeraldcityguitars.com/products/<%= @product.id%>-<%= @product.title.gsub(" ", "-")
 	 %>" />
 	<meta property="og:image" content="http://emeraldcityguitars.com<%= @product.front_photo.data.url(:original) %>"/>
