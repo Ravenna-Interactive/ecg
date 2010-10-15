@@ -2,7 +2,8 @@
 <% content_for :head do %>
 	<meta property="og:title" content="<%=h @product.title %>"/>
 	<meta property="og:type" content="product"/>
-	<meta property="og:url" content="http://emeraldcityguitars.com/products/<%= @product.title.downcase %>" />
+	<meta property="og:url" content="http://emeraldcityguitars.com/products/<%= @product.id%>-<%= @product.title.gsub(" ", "-")
+	 %>" />
 	<meta property="og:image" content="http://emeraldcityguitars.com/system/products/<%= @product.id%>/<%= @product.front_photo.data.url(:catalog) %>"/>
 <% end %>
 

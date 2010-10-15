@@ -16,7 +16,6 @@ class Product < ActiveRecord::Base
       :path => ":rails_root/public/system/product_audio/:id/:basename_:style.:extension"
 
 
-
   
   def self.per_page
       12
