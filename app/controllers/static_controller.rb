@@ -2,7 +2,7 @@ class StaticController < ApplicationController
    before_filter :find_categories
   
   def home
-    random = ENV['RAILS_ENV'] == 'development' ? "Random()" : "RAND()"
+    random = ActiveRecord::Base.connection.adapter_name == "MySQL" ? "RAND()" : "Random()"
     @banner = Banner.first
     @visitors = Visitor.find(:all, :order => random, :limit => 1)
     @categories = Category.all
