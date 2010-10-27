@@ -65,15 +65,25 @@
 	width:250px;
 	font-size:1.4em;
 	padding-top:8px;
+	float:left;
 }
+
 #interior_sub_head .pagination{
 	float:right;
-	padding-right:70px;
+	padding-right:30px;
 	padding-top:4px;
-	font-size:22px;
+	font-size:18px;
 	font-weight:bold;
 	color:#000;
 }
+#interior_sub_head #sort_form{
+	float:right;
+	width:160px;
+	padding-right:20px;
+	padding-top:4px;
+}
+#sort_form select{width:100px;}
+
 .pagination a{color:#000;}
 .pagination a:hover{color:#000;}
 .pagination .current{
@@ -105,7 +115,8 @@
 }
 #brand_list ul li{
 	padding:4px 0 4px 40px;
-	font-size:12px;
+	font-size:13px;
+	text-transform:uppercase;
 }
 #brands_listing_bottom{
 	background-image:url(/images/brands_nav_bg_bottom.jpg);

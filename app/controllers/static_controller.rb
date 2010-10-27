@@ -2,9 +2,8 @@ class StaticController < ApplicationController
    before_filter :find_categories
   
   def home
-    random = ENV['RAILS_ENV'] == 'development' ? "Random()" : "RAND()"
     @banner = Banner.first
-    @visitors = Visitor.find(:all, :order => random, :limit => 1)
+    @visitors = Visitor.find(:all, :order => ActiveRecord::Base.connection.random_function, :limit => 1)
     @categories = Category.all
     @new_spotlight = Product.find_new_spotlight
     @vintage_spotlight = Product.find_vintage_spotlight

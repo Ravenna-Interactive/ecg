@@ -22,19 +22,17 @@ class CategoriesController < ApplicationController
           @categories = Category.find(:all)
           @meta_title = "#{@category.name}"
 
-          respond_to do |format|
-            format.html do |wants|
-              @brand = @brands.first
-              @products = @category.products.paginate(:conditions => {:brand_id => @brand}, :page => params[:page])
+    respond_to do |format|
+      format.html do |wants|
+              @brand = @brands.first     
+              @search = Product.search.order(params[:order] || 'descend_by_date')
+
+              @products = @search.paginate(:conditions => { :category_id => @category, :brand_id => @brand }, :page => params[:page])      
               render :template => 'brands/show'
-     
-          #@search = @category.products.search(params[:search])
-          #@products = @search.paginate(:conditions => {:brand_id => @brand}, :page => params[:page])
-          #render :template => 'brands/show'
-        end
-        format.xml  { render :xml => @category }
       end
+      format.xml  { render :xml => @category }
     end
+  end
 
   # GET /categories/new
   # GET /categories/new.xml

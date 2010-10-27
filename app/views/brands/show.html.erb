@@ -7,7 +7,26 @@
     
     <div id="interior_sub_head">
         <%= will_paginate @products %>
-        <h5 id="sub_green_head"><%= h(@brand.name unless @brand.nil?) %></h5>
+		<h5 id="sub_green_head"><%= @brand.name unless @brand.nil? %></h5>
+	
+		<div id="sort_form">
+        <%- form_for [@category, @brand], :html => {:method => 'get', :id => 'sort_form', :class => 'sort_form'} do -%>
+          <label>Sort by: <%= select_tag :order, product_sort_options %></label>
+          <%= submit_tag 'Go' %>
+        <%- end -%>
+        <script type="text/javascript" charset="utf-8">
+        (function($){
+          var f = $('#sort_form')
+          f.find('input[type=submit]').remove();
+          f.find('select').change(function(e){
+            f.submit();
+          });
+          
+        })(jQuery);
+        </script>
+		</div>
+        
+
     </div>
 
     
