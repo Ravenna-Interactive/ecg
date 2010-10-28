@@ -19,7 +19,7 @@ class BrandsController < ApplicationController
       @category = Category.find_by_url_name(params[:category_id])
       @brand = Brand.find(params[:id])
          
-     @search = Product.search(params[:search])
+     @search = Product.search.order(params[:order] || 'decend_by_date')
                 
      @products = @search.paginate(:conditions => { :category_id => @category, :brand_id => @brand }, :page => params[:page])      
       @meta_title = "#{@brand.name}"
