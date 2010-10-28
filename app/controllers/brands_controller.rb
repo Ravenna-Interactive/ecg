@@ -16,18 +16,18 @@ class BrandsController < ApplicationController
   # GET /brands/1
   # GET /brands/1.xml
   def show
-      @category = Category.find_by_url_name(params[:category_id])
-      @brand = Brand.find(params[:id])
+    @category = Category.find_by_url_name(params[:category_id])
+    @brand = Brand.find(params[:id])
          
-     @search = Product.search.order(params[:order] || 'decend_by_date')
+    @search = Product.search.order(params[:order] || 'decend_by_date')
                 
-     @products = @search.paginate(:conditions => { :category_id => @category, :brand_id => @brand }, :page => params[:page])      
-      @meta_title = "#{@brand.name}"
-      respond_to do |format|
-        format.html # show.html.erb
-        format.xml  { render :xml => @brand }
-      end
+    @products = @search.paginate(:conditions => { :category_id => @category, :brand_id => @brand }, :page => params[:page])      
+    @meta_title = "#{@brand.name}"
+    respond_to do |format|
+      format.html # show.html.erb
+      format.xml  { render :xml => @brand }
     end
+  end
 
   # GET /brands/new
   # GET /brands/new.xml
