@@ -42,12 +42,12 @@ Rails::Initializer.run do |config|
   # config.i18n.default_locale = :de
 end
 
-ActionMailer::Base.delivery_method = :smtp
+ActionMailer::Base.delivery_method = :sendmail
  ActionMailer::Base.smtp_settings = {
-     :address => "mail.ravennainteractive.com",
+     :address => "mail.emeraldcityguitars.com",
      :port => 587,
-     :domain => "ravennainteractive.com",
+     :domain => "emeraldcityguitars.com",
      :authentication => :login,
-     :user_name => "info@ravennainteractive.com",
-     :password => "ravenna1"
+     :user_name => "jay@emeraldcityguitars.com",
+     :password => "Bulldog.72"
    }
