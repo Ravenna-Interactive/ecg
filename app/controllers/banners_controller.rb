@@ -85,7 +85,7 @@ class BannersController < ApplicationController
     end
   end
   def find_banner
-     @banner = Banner.find(:first)
+     @banner = Banner.first
      render :layout => false
    end
 end

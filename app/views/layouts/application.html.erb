@@ -1,6 +1,5 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+    "http://www.w3.org/TR/html4/strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
   <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
@@ -11,8 +10,15 @@
 	<meta property="og:site_name" content="Emerald City Guitars"/>
 	<meta property="fb:admins" content="730430626"/>
   <%= yield :head -%>
-  <%= stylesheet_link_tag 'home', 'interior', 'shadowbox' %>
-  <%= javascript_include_tag :defaults, 'shadowbox.js', 'cycle.js', 'cufon', 'Rosewood_Std_400.font', 'supersleight-min'%>
+  <%= stylesheet_link_tag 'home', 'interior', 'shadowbox', 'thickbox'%>
+  <%= javascript_include_tag :defaults,  'cycle.js', 'cufon', 'Rosewood_Std_400.font', 'supersleight-min'%>
+	
+	<% if @meta_title == "Home" %>
+		<%= javascript_include_tag 'thickbox' %>
+	<% else %>
+		<%= javascript_include_tag 'shadowbox' %>
+	<% end %>	
+		 
 	<script type="text/javascript">
 				Cufon.replace('h6#int_header'); 
 				Cufon.replace('h5#sub_green_head');
@@ -85,7 +91,7 @@
 <%= render :partial => 'shared/google_analytics' %>
 
 <script type="text/javascript">
-Shadowbox.init();
+Shadowbox.init({});
 </script>
 <script type="text/javascript"> Cufon.now(); </script>
 </body>
