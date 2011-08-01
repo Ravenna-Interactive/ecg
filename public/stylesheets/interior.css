@@ -178,7 +178,7 @@
 
 										/* Product #show styles */
 #one_product{
-	font-size:12px;
+	font-size:14px; line-height:18px;}
 }
 #one_product img{
 	text-align:left;

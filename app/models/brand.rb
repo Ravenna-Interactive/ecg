@@ -5,5 +5,7 @@ class Brand < ActiveRecord::Base
   
   #Validations
   validates_presence_of :name
-  
+  def <=> other
+      self.name <=> other.name 
+    end
 end

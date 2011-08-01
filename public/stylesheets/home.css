@@ -245,15 +245,17 @@ a:hover {color:#999; text-decoration:underline;}
 #vintage_image_title{
 	position:absolute; 
 	bottom:0px; 
-	right:10px;
+	left:0px;
 	height:26px;
-	width:160px;
-	padding:10px 0 0 3px;
+	width:230px;
+	padding:10px 3px 0 3px;
+	margin:8px 0 4px 8px;
 	background-image:url(/images/spotlight_overlay.png);
-	background-repeat:no-repeat;
+	background-repeat:repeat;
 	color:#fff;
 	font-size:12px;
-	z-index:100; }
+	z-index:100; 
+	text-align:center;}
 
 .spotlight_link{
 	position:relative;
@@ -279,16 +281,18 @@ a:hover {color:#999; text-decoration:underline;}
 #new_image_title{
 	position:absolute; 
 	bottom:0px; 
-	right:10px;
+	left:0px;
 	height:26px;
-	width:160px;
-	padding:10px 0 0 3px;
+	width:230px;
+	padding:10px 3px 0 3px;
+	margin:8px 0 4px 8px;
 	background-image:url(/images/spotlight_overlay.png);
-	background-repeat:no-repeat;
+	background-repeat:repeat;
 	color:#fff;
-	font-size:12px; 
-	z-index:3000;} 
-
+	font-size:12px;
+	z-index:3000; 
+	text-align:center;}
+	
 #new_spotlight img{
 		padding:40px 0 0 8px;
 	}
