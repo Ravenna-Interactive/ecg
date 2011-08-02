@@ -1,5 +1,5 @@
 class StaticController < ApplicationController
-   before_filter :find_categories
+   before_filter :find_categories, :redirect_mobile
   
   def home
     @banner = Banner.first

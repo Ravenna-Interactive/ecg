@@ -78,6 +78,11 @@
         
         <% else %><%= link_to "Login", login_path %> | <%= link_to "Site by Ravenna Interactive", "http://ravennainteractive.com" %> <% end %> <br>
         83 S. Washington St. Pioneer Square, Seattle, WA 98104<br>Mon - Sat 10am - 6pm
+		<% if mobile_device? %>
+		   
+		<% else %>
+		    <%= link_to "Mobile Site", "/mobile.html", :mobile => 1 %>
+		<% end %>
           </p>
 </div>
 

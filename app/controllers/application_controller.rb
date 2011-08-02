@@ -31,6 +31,11 @@ class ApplicationController < ActionController::Base
      session[:mobile_param] = params[:mobile] if params[:mobile]
      request.format = :mobile if mobile_device?
    end
+   
+   def redirect_mobile 
+       redirect_to '/mobile.html' if mobile_device?
+   end
+   
     
    protected 
     def find_categories
