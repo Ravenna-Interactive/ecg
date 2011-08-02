@@ -12,33 +12,27 @@ class ApplicationController < ActionController::Base
    before_filter :meta_defaults
    private
 
-  def meta_defaults
+   def meta_defaults
      @meta_title = ""
      @meta_keywords = "Vintage Guitars, Seattle Vintage Guitars, Guitars, Used Guitars, Seattle Used Guitars"
      @meta_description = "Seattle's Best Vintage and Used Guitar Shop"
    end
    
-     MOBILE_BROWSERS = ["android", "ipod", "opera mini", "blackberry", "palm","hiptop","avantgo","plucker", "xiino","blazer","elaine", "windows ce; ppc;", "windows ce; smartphone;","windows ce; iemobile", "up.browser","up.link","mmp","symbian","smartphone", "midp","wap","vodafone","o2","pocket","kindle", "mobile","pda","psp","treo"]
+   def mobile_device?
+     if session[:mobile_param]
+       session[:mobile_param] == "1"
+     else
+       request.user_agent =~ /Mobile|webOS/
+     end
+   end
+   helper_method :mobile_device?
 
-      def detect_browser
-        layout = selected_layout
-        return layout if layout
-        agent = request.headers["HTTP_USER_AGENT"].downcase
-        MOBILE_BROWSERS.each do |m|
-          return "mobile_application" if agent.match(m)
-        end
-        return "application"
-      end
-
-      def selected_layout
-        session.inspect # force session load
-        if session.has_key? "layout"
-          return (session["layout"] == "mobile") ? 
-            "mobile_application" : "application"
-        end
-        return nil
-      end
-  protected 
+   def prepare_for_mobile
+     session[:mobile_param] = params[:mobile] if params[:mobile]
+     request.format = :mobile if mobile_device?
+   end
+    
+   protected 
     def find_categories
       @categories = Category.find(:all)
     end

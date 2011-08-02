@@ -9,6 +9,13 @@
   <meta name="description" content="<%= @meta_description %>" />
 	<meta property="og:site_name" content="Emerald City Guitars"/>
 	<meta property="fb:admins" content="730430626"/>
+	<% if mobile_device? %>
+	    	  <META HTTP-EQUIV="Refresh" CONTENT="0; URL=/mobile.html">
+	<% else %>
+			
+	<% end %>
+	
+	
   <%= yield :head -%>
   <%= stylesheet_link_tag 'home', 'interior', 'shadowbox', 'thickbox'%>
   <%= javascript_include_tag :defaults,  'cycle.js', 'cufon', 'Rosewood_Std_400.font', 'supersleight-min'%>

@@ -41,6 +41,8 @@ class StaticController < ApplicationController
     @staffs = Staff.all
   end
   
+  
+  
  
   
 end
