@@ -41,9 +41,4 @@ class ApplicationController < ActionController::Base
     def find_categories
       @categories = Category.find(:all)
     end
-    
-    
-   
-
-  
 end
