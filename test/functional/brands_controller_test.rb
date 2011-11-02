@@ -1,6 +1,11 @@
 require 'test_helper'
 
 class BrandsControllerTest < ActionController::TestCase
+  
+  def setup
+    login_as :quentin
+  end
+  
   test "should get index" do
     get :index
     assert_response :success
@@ -14,32 +19,25 @@ class BrandsControllerTest < ActionController::TestCase
 
   test "should create brand" do
     assert_difference('Brand.count') do
-      post :create, :brand => { }
-    end
-
-    assert_redirected_to brand_path(assigns(:brand))
-  end
-
-  test "should show brand" do
-    get :show, :id => brands(:one).to_param
-    assert_response :success
-  end
-
-  test "should get edit" do
-    get :edit, :id => brands(:one).to_param
-    assert_response :success
-  end
-
-  test "should update brand" do
-    put :update, :id => brands(:one).to_param, :brand => { }
-    assert_redirected_to brand_path(assigns(:brand))
-  end
-
-  test "should destroy brand" do
-    assert_difference('Brand.count', -1) do
-      delete :destroy, :id => brands(:one).to_param
+      post :create, :brand => { :name => "Happy Brand" }
     end
 
     assert_redirected_to brands_path
   end
+
+  test "should show brand" do
+    get :show, :id => brands(:gibson).to_param
+    assert_response :success
+  end
+
+  test "should get edit" do
+    get :edit, :id => brands(:gibson).to_param
+    assert_response :success
+  end
+
+  test "should update brand" do
+    put :update, :id => brands(:gibson).to_param, :brand => { }
+    assert_redirected_to brands_path
+  end
+
 end

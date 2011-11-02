@@ -1,6 +1,11 @@
 require 'test_helper'
 
 class LinksControllerTest < ActionController::TestCase
+  
+  def setup
+    login_as :quentin
+  end
+  
   test "should get index" do
     get :index
     assert_response :success
@@ -17,7 +22,7 @@ class LinksControllerTest < ActionController::TestCase
       post :create, :link => { }
     end
 
-    assert_redirected_to link_path(assigns(:link))
+    assert_redirected_to links_path
   end
 
   test "should show link" do

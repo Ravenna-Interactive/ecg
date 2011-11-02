@@ -47,7 +47,7 @@ class CategoriesController < ApplicationController
 
   # GET /categories/1/edit
   def edit
-   @category = Category.find(params[:id])
+   @category = Category.find_by_url_name!(params[:id])
   end
 
   # POST /categories
@@ -70,7 +70,7 @@ class CategoriesController < ApplicationController
   # PUT /categories/1
   # PUT /categories/1.xml
  def update
-   @category = Category.find(params[:id])
+   @category = Category.find_by_url_name!(params[:id])
 
     respond_to do |format|
       if @category.update_attributes(params[:category])
