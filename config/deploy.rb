@@ -1,4 +1,5 @@
 require 'capistrano/ext/multistage'
+require 'bundler/capistrano'
 
 set :application, "Emerald City Guitars"
 set :repository,  "git://github.com/Ravenna/ecg.git"
