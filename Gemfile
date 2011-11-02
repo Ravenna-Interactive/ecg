@@ -8,5 +8,5 @@ gem "RedCloth", ">=4.2.2"
 gem "searchlogic"
 
 group :development do
-  gem "postgres"
+  gem "sqlite3"
 end
