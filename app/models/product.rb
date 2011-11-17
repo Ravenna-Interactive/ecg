@@ -18,7 +18,7 @@ class Product < ActiveRecord::Base
 
   
   def self.per_page
-      12
+      6
   end
   
   def self.new_spotlight=(a_product)

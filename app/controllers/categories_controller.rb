@@ -18,16 +18,16 @@ class CategoriesController < ApplicationController
   # GET /categories/1.xml
   def show
      @category = Category.find_by_url_name(params[:id])
-          @brands = @category.brands
-          @categories = Category.find(:all)
-          @meta_title = "#{@category.name}"
+     @brands = @category.brands
+     @categories = Category.find(:all)
+     @meta_title = "#{@category.name}"
 
     respond_to do |format|
       format.html do |wants|
               @brand = @brands.first     
-              @search = Product.search.order(params[:order] || 'descend_by_date')
+              @search = Product.brand_id_equals(@brand.id).category_id_equals(@category.id)
 
-              @products = @search.paginate(:conditions => { :category_id => @category, :brand_id => @brand }, :page => params[:page])      
+              @products = @search.paginate(:page => params[:page])
               render :template => 'brands/show'
       end
       format.xml  { render :xml => @category }

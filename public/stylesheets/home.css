@@ -21,8 +21,8 @@ a:hover {color:#999; text-decoration:underline;}
 #top_wood{
 	width:100%;
 	background-image:url(/images/top_wood_bg.png);
-	background-repeat:repeat-x;
-	height:50px;
+	background-repeat:repeat;
+	height:70px;
 }
 #top_wood_interior{
 	margin-right:auto;
@@ -35,13 +35,19 @@ a:hover {color:#999; text-decoration:underline;}
 #logo{
 	position:absolute;
 	z-index:25;
-	top:16px;
+	top:26px;
 	left:-7px;
 }
 #phone_seattle{
 	padding-left:260px;
-	padding-top:12px;
+	padding-top:5px;
+	color:#decb5a;
+	text-align:right;
+	font-size:13px;
+	width:300px;
 }
+#phone_seattle img{float:left;}
+#phone_seattle p{padding-top:5px;}
 #top_links{
 	float:right;
 	background-image:url(/images/top_links_bg.png);
@@ -172,9 +178,11 @@ a:hover {color:#999; text-decoration:underline;}
 	display:inline;
 	padding:0 3px 0 3px;
 	color:#fff;
+
 }
 #inventory_nav li a{
-	font-size:13px;
+	font-size:14px;
+	font-weight:bold;
 	color:#fff;
 	text-decoration:none;
 }

@@ -25,7 +25,7 @@
 		
 		<div id="product_show_thumb">
 			<% for photo in @product.photos %>
-		 		<p><%= link_to (image_tag(photo.data.url(:tiny)), photo.data.url(:original), :rel => "shadowbox[gallery]") -%></p>
+<p><%= link_to image_tag(photo.data.url(:catalog)), photo.data.url(:original), :rel => "shadowbox[gallery]" %></p>
 			<% end %>
 		</div>
 	

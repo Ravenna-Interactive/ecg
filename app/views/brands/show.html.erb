@@ -11,7 +11,7 @@
 	
 		
         <%- form_for [@category, @brand], :html => {:method => 'get', :id => 'sort_form', :class => 'sort_form'} do -%>
-          <label>Sort by: <%= select_tag :order, product_sort_options %></label>
+          <label>Sort by: </label> <%= select_tag :order, product_sort_options %>
           <%= submit_tag 'Go' %>
         <%- end -%>
         <script type="text/javascript" charset="utf-8">

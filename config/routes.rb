@@ -39,6 +39,7 @@ map.resources :categories
 
   
   map.with_options :controller => 'static' do |static|
+    static.root :action => 'home'
     static.home 'home', :action => 'home'
     static.about 'about', :action => 'about'
     static.history 'history', :action => 'history'
@@ -83,7 +84,7 @@ map.resources :categories
   #   end
 
   # You can have the root of your site routed with map.root -- just remember to delete public/index.html.
-  map.root :controller => "static", :action => "home"
+  # map.root :controller => "static", :action => "home"
 
   # See how all your routes lay out with "rake routes"
 
