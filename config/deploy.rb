@@ -8,8 +8,6 @@ set :repository,  "git://github.com/Ravenna/ecg.git"
 # servers (which is the default), you can specify the actual location
 # via the :deploy_to variable:
 # set :deploy_to, "/var/www/#{application}"
-default_environment['GEM_PATH']='/home/emeraldcityguitars/.gems:/usr/lib/ruby/gems/1.8'
-default_environment['PATH']='/usr/lib/ruby/gems/1.8/bin:/home/emeraldcityguitars/.gems/bin:/usr/local/bin:/usr/bin:/bin'
 
 
 
