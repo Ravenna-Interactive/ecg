@@ -25,7 +25,8 @@ class CategoriesController < ApplicationController
     respond_to do |format|
       format.html do |wants|
               @brand = @brands.first     
-              @search = Product.brand_id_equals(@brand.id).category_id_equals(@category.id)
+              @search = Product.all("brand_id = ? AND category_id = ?", @brand.id, @category.id )
+              #brand_id_equals(@brand.id).category_id_equals(@category.id)
 
               @products = @search.paginate(:page => params[:page])
               render :template => 'brands/show'
