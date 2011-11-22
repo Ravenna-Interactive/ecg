@@ -20,8 +20,8 @@ class BrandsController < ApplicationController
     @brand = Brand.find(params[:id])
     
     
-    @search = Product.find(:all, :conditions => {:brand_id => @brand.id, :category_id => @category.id})
-    #@search.category_id_equals(@category.id)
+    @search = Product.brand_id_equals(@brand.id)
+    @search.category_id_equals(@category.id)
     @products = @search.order(params[:order] || :descend_by_price).paginate(:page => params[:page])
     
     @meta_title = "#{@brand.name}"
