@@ -17,9 +17,9 @@ class BrandsController < ApplicationController
   # GET /brands/1.xml
   def show
     @category = Category.find_by_url_name(params[:category_id])
-    @brand = Brand.find(params[:id])
-    @search = Product.order(params[:order] || :descend_by_price).find(:all, :conditions => {:brand_id => @brand.id, :category_id => @category.id})
-    @products = @search.paginate(:page => params[:page])
+       @brand = Brand.find(params[:id])
+       @search = Product.order(params[:order] || :descend_by_price).find(:all, :conditions => {:brand_id => @brand.id, :category_id => @category.id})
+       @products = @search.paginate(:page => params[:page])
     
     @meta_title = "#{@brand.name}"
     respond_to do |format|
