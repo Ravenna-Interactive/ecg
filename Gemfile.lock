@@ -1,3 +1,11 @@
+GIT
+  remote: git://github.com/mislav/will_paginate
+  revision: a293556ae682fdd6ba3bb59affcae246b2e444ee
+  tag: 2.3.6
+  specs:
+    will_paginate (2.3.6)
+      activesupport (>= 1.4.4)
+
 GEM
   remote: http://rubygems.org/
   specs:
@@ -21,6 +29,7 @@ GEM
     capistrano-ext (1.2.1)
       capistrano (>= 1.0.0)
     highline (1.6.8)
+    mysql (2.8.1)
     net-scp (1.0.4)
       net-ssh (>= 1.99.1)
     net-sftp (2.0.5)
@@ -49,7 +58,9 @@ DEPENDENCIES
   RedCloth (>= 4.2.2)
   capistrano
   capistrano-ext
+  mysql
   rails (= 2.3.11)
   rake
   searchlogic
   sqlite3
+  will_paginate (= 2.3.6)!
